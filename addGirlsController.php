@@ -11,12 +11,32 @@ ob_start();
 
 <body>
 <div id="contents">
+<?php
+
+
+  $firstName = mysqli_real_escape_string($db, trim($_POST['firstName']));
+  $lastName = mysqli_real_escape_string($db, trim($_POST['lastName']));
+  $DOB = mysqli_real_escape_string($db, trim($_POST['DOB']));
+  $address = mysqli_real_escape_string($db, trim($_POST['address']));
+  $city = mysqli_real_escape_string($db, trim($_POST['city']));
+  $st = mysqli_real_escape_string($db, trim($_POST['st']));
+  $zip = mysqli_real_escape_string($db, trim($_POST['zip']));
+  
+  $query = "INSERT INTO girls (firstName, lastName, DOB, address, city, st, zip) VALUES ($firstName, $lastName, $DOB, $address, $city, $st, $zip);"
+  
 
 
 
 
-<div>
+?>
 
+
+
+</div>
+
+<script type="text/javascript">
+window.location="addGirls.php";
+</script>
 
 
 

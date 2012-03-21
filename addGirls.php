@@ -12,16 +12,16 @@ session_start();
 <table border="1">
 <text align="left">
 <tr>
-<td> First Name <input type = "text" name = "firstname" style="width:200px;" />
-Last Name <input type = "textarea" name = "lastname" style="width:200px" /></td>
+<td> First Name <input type = "text" name = "firstName" style="width:200px;" />
+Last Name <input type = "textarea" name = "lastName" style="width:200px" /></td>
 </tr>
 <tr>
 <td>Address <input type = "textarea" name = "address" style="width:492px" /></td>
 </tr>
 <tr>
 <td>City <input type = "textarea" name = "city" style = "width:125px" />
-State <input type = "textarea" name = "state" style = "width:35px" />
-Zip Code <input type = "textarea" name = "zipcode" style = "width:75px" />
+State <input type = "textarea" name = "st" style = "width:35px" />
+Zip Code <input type = "textarea" name = "zip" style = "width:75px" />
 DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
 </tr>
 </text>

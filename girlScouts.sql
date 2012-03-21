@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `nuts` (
 ) ;
 
 CREATE TABLE IF NOT EXISTS `girls`(
-  `id` INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` INT(3) AUTO_INCREMENT PRIMARY KEY,
   `firstName` varchar(30) NOT NULL,
   `lastName` varchar(30) NOT NULL,
   `DOB` varchar(9) NOT NULL,
   `address` varchar(70) NOT NULL,
+  `city` varchar(40) NOT NULL,
   `st` varchar(2) NOT NULL,
-  `zip` int(5) NOT NULL
-  `sales` INT(5) NOT NULL DEFAULT 0
+  `zip` int(5) NOT NULL,
+  `sales` INT(5) DEFAULT 0
   
 ) ;
 
