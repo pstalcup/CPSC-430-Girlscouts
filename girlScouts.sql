@@ -16,21 +16,34 @@ DROP DATABASE IF EXISTS S12-cpsc430G3;
 CREATE DATABASE IF NOT EXISTS S12-cpsc430G3;
 USE S12-cpsc430G3;
 
-CREATE TABLE IF NOT EXISTS `cookies` (
+CREATE TABLE IF NOT EXISTS `products` (
+  `productId` INT(5) AUTO_INCREMENT NOT NULL,
+  `types` ENUM('Cookie', 'Nut') NOT NULL,
   `name` varchar(40) NOT NULL,
   `price` int(5) NOT NULL,
   `description` varchar(70) NOT NULL,
   `quantity` int(3) NOT NULL,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY (`productId`)
 ) ;
 
+CREATE TABLE IF NOT EXISTS `transactions`(
+  TID INT(10) auto_increments NOT NULL,
+  girlId INT(5) NOT NULL,
 
-CREATE TABLE IF NOT EXISTS `nuts` (
-  `name` varchar(40) NOT NULL,
-  `price` int(5) NOT NULL,
-  `description` blob NOT NULL,
-  PRIMARY KEY (`name`)
-) ;
+FOREIGN KEY girlId
+REFERENCE girls(id)
+);
+
+CREATE TABLE IF NOT EXISTS `sales`(
+  `transactionId` INT(10) AUTO_INCREMENT,
+  `quantity` INT(5) DEFAULT 0 NOT NULL,
+  `productId` INT(3) NOT NULL
+
+FOREIGN KEY(productId)
+REFERENCE products(productId)
+
+);
+
 
 CREATE TABLE IF NOT EXISTS `girls`(
   `id` INT(3) AUTO_INCREMENT PRIMARY KEY,
