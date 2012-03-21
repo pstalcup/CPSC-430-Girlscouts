@@ -8,7 +8,7 @@ session_start();
 
 <font face = "century gothic">
 
-<form action =" " method = "post">
+<form action ="addGirlsController.php" method = "post">
 <table border="1">
 <text align="left">
 <tr>
