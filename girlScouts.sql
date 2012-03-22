@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` varchar(40) NOT NULL,
   `price` float(5) NOT NULL,
   `description` varchar(70) NOT NULL,
-  `quantity` int(3) NOT NULL,
+  `quantity` int(5) NOT NULL,
   PRIMARY KEY (`productId`)
 ) ;
 
