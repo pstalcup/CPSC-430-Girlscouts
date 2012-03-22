@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `productId` INT(5) AUTO_INCREMENT NOT NULL,
   `types` ENUM('Cookie', 'Nut') NOT NULL,
   `name` varchar(40) NOT NULL,
-  `price` int(5) NOT NULL,
+  `price` float(5) NOT NULL,
   `description` varchar(70) NOT NULL,
   `quantity` int(3) NOT NULL,
   PRIMARY KEY (`productId`)
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `girls`(
 
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `email` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL PRIMARY KEY,
   `password` varchar(20) NOT NULL,
   `firstName` varchar(30) NOT NULL,
   `lastName` varchar(30) NOT NULL,
@@ -72,16 +72,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `cellNum` int(10) NOT NULL,
   `licenseNum` varchar(12),
   `ssNum` varchar(10),
-  
-  PRIMARY KEY (`email`)
-) ;
+  `girlId` int(3) DEFAULT 0
+ 
+);
 
 CREATE TABLE IF NOT EXISTS `requests`(
-`senderName` varchar(50) NOT NULL,
-`daughterId` varchar(50) NOT NULL,
+`email` varchar(50) NOT NULL,
+`daughter` varchar(70) NOT NULL,
 
-FOREIGN KEY(daughterId)
-REFERENCES girls(id)
+FOREIGN KEY(email)
+REFERENCES users(email)
 
 );
 
