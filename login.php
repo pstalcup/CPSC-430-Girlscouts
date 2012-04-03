@@ -4,7 +4,7 @@
 		echo $_GET["error"];
 	}
 ?>
-
+Welcome to the Girlscouts Troop 868 Manager
 <form action="loginController.php" method="post">
 <table>
 	<tr>
