@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `attending`(
 
 FOREIGN KEY(eventId) REFERENCES events(eventId)
 FOREIGN KEY(girlId) REFERENCES girls(girlId)
-);
+); //there is an error here that prevents the table 'attending' from being created. 11:21
 
 INSERT INTO users (email, password, firstname, lastname, DOB, address, st, zip, phonenum, cellnum)
 VALUES ('japwahl@gmail.com', 'password', 'Jennifer', 'Polack-Wahl','00-00-0000', 'N/A', 'VA', '22401', '555-555-5555', '555-555-5555');
