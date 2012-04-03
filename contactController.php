@@ -1,27 +1,29 @@
-<html>
-HI
 <?php
   session_start();
-  include "db_connect.php";
   include "loggedIn.php";
+  include "db_connect.php";
+
+  if(isset($_POST['type'])) {
+    $type = mysqli_real_escape_string($db, trim($_POST['type']));
+  } else { $type = ""; }
+  if(isset($_POST['name'])) {
+    $name = mysqli_real_escape_string($db, trim($_POST['name']));
+  } else { $name = ""; }
+  if(isset($_POST['price'])) {
+    $price = mysqli_real_escape_string($db, trim($_POST['price']));
+  } else { $price = ""; }
+  if(isset($_POST['desc'])) {
+    $desc = mysqli_real_escape_string($db, trim($_POST['desc']));
+  } else { $desc = ""; }
+  if(isset($_POST['quantity'])) {
+    $quantity = mysqli_real_escape_string($db, trim($_POST['quantity']));
+  } else { $quantity = ""; }
+  
+  $query = "insert into table products ('types','name','price','description','quantity') values ($type,$name,$price,$desc,$quantity);";
+  $result = mysqli_query($db, $query) or die ("ERROR INSERTING");
+  
+
+  header("Location: editInventory.php");
+  exit("");
+
 ?>
-temporarily coding in this page until I can push the appropriate file at home.
-
-<?php
-  if(isset($_POST['game'])) {
-    $title = mysqli_real_escape_string($db, trim($_POST['game']));
-  } else { $title = ""; }
-
-/*
-
-
-
-
-*/
-
-?>
-
-
-
-
-</html>
