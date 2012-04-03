@@ -8,6 +8,7 @@
 	{
 		$links["Approve Accounts"] = "approve.php";
 	}
+	$links["Logout"] = "logout.php";
 ?>
 
 <div id="toolbar">

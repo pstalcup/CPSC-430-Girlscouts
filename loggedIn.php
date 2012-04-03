@@ -3,7 +3,7 @@
 	{
 		Header("Location: login.php");		
 	}
-	if($_SESSION['user'] == "admin")
+	if($_SESSION['email'] == "japwahl@gmail.com")
 	{
 		$admin = 1;
 	}
@@ -11,7 +11,7 @@
 	{
 		$admin = 2;
 	}
-	if(isset($needsadmin) && $admin)
+	if(isset($needsadmin) && $admin != 1)
 	{
 		Header("Location: main.php");
 	}
