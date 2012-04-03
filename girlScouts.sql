@@ -72,8 +72,10 @@ CREATE TABLE IF NOT EXISTS `attending`(
 `girlId` int(5) NOT NULL,
 
 FOREIGN KEY(eventId) REFERENCES events(eventId)
-
+FOREIGN KEY(girlId) REFERENCES girls(girlId)
 );
 
+INSERT INTO users (email, password, firstname, lastname, DOB, address, st, zip, phonenum, cellnum)
+VALUES ('japwahl@gmail.com', 'password', 'Jennifer', 'Polack-Wahl','00-00-0000', 'N/A', 'VA', '22401', '555-555-5555', '555-555-5555');
 
 SHOW TABLES;
