@@ -30,8 +30,7 @@ CREATE TABLE IF NOT EXISTS `transactions`(
   TID INT(10) auto_increments NOT NULL,
   girlId INT(5) NOT NULL,
 
-FOREIGN KEY girlId
-REFERENCE girls(id)
+FOREIGN KEY girlId REFERENCES girls(id)
 );
 
 CREATE TABLE IF NOT EXISTS `sales`(
@@ -39,8 +38,7 @@ CREATE TABLE IF NOT EXISTS `sales`(
   `quantity` INT(5) DEFAULT 0 NOT NULL,
   `productId` INT(3) NOT NULL
 
-FOREIGN KEY(productId)
-REFERENCE products(productId)
+FOREIGN KEY(productId) REFERENCES products(productId)
 
 );
 
@@ -80,8 +78,7 @@ CREATE TABLE IF NOT EXISTS `requests`(
 `email` varchar(50) NOT NULL,
 `daughter` varchar(70) NOT NULL,
 
-FOREIGN KEY(email)
-REFERENCES users(email)
+FOREIGN KEY(email) REFERENCES users(email)
 
 );
 
@@ -92,17 +89,27 @@ CREATE TABLE IF NOT EXISTS `demographics`(
 `gender` ENUM('Female', 'Male'),
 `numYearsScouting` INT(2) NOT NULL 
 
-FOREIGN KEY(`parent`)
-REFERENCES `users`(`email`)
+FOREIGN KEY(`parent`) REFERENCES `users`(`email`)
 );
 
 CREATE TABLE IF NOT EXISTS `events`(
+`eventId` int(5) AUTO_INCREMENT PRIMARY KEY,
 `dateOfEvent` date NOT NULL,
 `timeOfEvent` TIME NOT NULL,
 `name` varchar(50) NOT NULL,
 `description` blob,
 `location` blob NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS `attending`(
+`eventId` int(5) NOT NULL,
+`girlId` int(5) NOT NULL
+
+FOREIGN KEY(`eventId`) REFERENCES `events`(`eventId`)
+
+);
+
+
 
 
 SHOW TABLES;
