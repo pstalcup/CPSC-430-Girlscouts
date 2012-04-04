@@ -3,6 +3,17 @@
 	{
 		Header("Location: login.php");		
 	}
+	else
+	{
+		$e = $_SESSION["email"];
+		$query = "SELECT * FROM requests WHERE email='$e';";
+		$result = mysqli_query($db,$query);
+		echo $query;
+		if($row = mysqli_fetch_array($result))
+		{
+			Header("Location: notApproved.php");	
+		}
+	}
 	if($_SESSION['email'] == "japwahl@gmail.com")
 	{
 		$admin = 1;
