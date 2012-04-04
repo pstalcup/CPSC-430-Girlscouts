@@ -15,4 +15,23 @@
 	{
 		Header("Location: main.php");
 	}
+	$links = Array();
+	$links["Home"] = "main.php";
+	if($admin == 1)
+	{
+		$links["Approve Accounts"] = "approve.php";
+		$links["Generate Sales Report"] = "salesReport.php";
+		$links["Add Girls"] = "addGirls.php";
+	}
+	$links["Logout"] = "logout.php";
 ?>
+
+<div id="toolbar">
+	Links:
+	<?
+		foreach($links as $key => $value)
+		{
+			echo "<a href='$value'>$key</a> ";
+		}
+	?>
+</div>

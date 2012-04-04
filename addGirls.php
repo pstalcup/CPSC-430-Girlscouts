@@ -2,20 +2,7 @@
 	include "db_connect.php";
 	include "loggedIn.php";
 
-	$links = Array();
-	$links["Home"] = "main.php";
 ?>
-<header>
-<div id="toolbar">
-	Links:
-	<?
-		foreach($links as $key => $value)
-		{
-			echo "<a href='$value'>$key</a> ";
-		}
-	?>
-</div>
-</header>
 <HTML>
 
 <font color = "green" face = "century gothic"><h1>ADD GIRL TO TROOP</h1></font>
