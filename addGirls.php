@@ -1,5 +1,6 @@
 <?php
 	include "db_connect.php";
+	$needsadmin = true;
 	include "loggedIn.php";
 
 	$links = Array();
