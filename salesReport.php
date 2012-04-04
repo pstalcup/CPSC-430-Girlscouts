@@ -3,7 +3,7 @@ include "db_connect.php";
 $needsadmin = true;
 include "loggedIn.php";
 
-$query = "SELECT DISTINCT p.name, s.quantity, p.price, (s.quantity * p.price) AS 'Total' FROM products p JOIN sales s ON p.productId = s.productId WHERE s.quantity >0;"
+$query = "SELECT DISTINCT p.name, s.quantity, p.price, (s.quantity * p.price) AS 'Total' FROM products p JOIN sales s ON p.productId = s.productId WHERE s.quantity >0;";
 $result = mysqli_query($db, $query);
 ?>
 <html>
