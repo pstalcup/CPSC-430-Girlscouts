@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `transactions`(
 );
 
 CREATE TABLE IF NOT EXISTS `sales`(
+  `customer` varchar(50),
   `transactionId` INT(10) NOT NULL REFERENCES transactions(TID),
   `quantity` INT(5) DEFAULT 0 NOT NULL,
   `productId` INT(3) NOT NULL REFERENCES products(productId)  
