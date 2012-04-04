@@ -10,11 +10,9 @@ $result = mysqli_query($db, $query);
 <html>
 <header>
 <title> Sales Report</title>
-
-
 </header>
 
-<table>
+<table border = "1" cellpadding="5" cellspacing="5" width="100%" font="family: century gothic">
 
 <?php
 echo "<tr><th>Product</th><th >Quantity</th><th>Price</th><th>Total</th></tr>";
@@ -24,10 +22,7 @@ while($row = mysqli_fetch_array($result)) {
 	$price = $row['price'];
 	$total = $row['(s.quantity * p.price)'];
 	
-	if ($name == NULL) {
-		$name = "Not Available";
-	}
-	
+		
 echo "<tr><td>$name  </td><td>$quantity </td><td>$price </td><td> $total</td></tr>\n";
 }
 ?>
