@@ -8,7 +8,6 @@
 		$e = $_SESSION["email"];
 		$query = "SELECT * FROM requests WHERE email='$e';";
 		$result = mysqli_query($db,$query);
-		echo $query;
 		if($row = mysqli_fetch_array($result))
 		{
 			Header("Location: notApproved.php");	
@@ -33,6 +32,7 @@
 		$links["Approve Accounts"] = "approve.php";
 		$links["Generate Sales Report"] = "salesReport.php";
 		$links["Add Girls"] = "addGirls.php";
+		$links["Create Event"] = "createEvents.php";
 	}
 	$links["Logout"] = "logout.php";
 ?>
