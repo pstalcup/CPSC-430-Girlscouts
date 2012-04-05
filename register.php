@@ -19,14 +19,14 @@ span
 	{
 		$ddm .= "<option name=\"$i\">$i</option>";
 	}
-	$ddm .= "</option>";
+	$ddm .= "</select>";
 	
 	$ddd = "<select name=\"day\">";
 	for($i = 1;$i < 32;$i++) 
 	{
 		$ddd .= "<option name=\"$i\">$i</option>";
 	}
-	$ddm .= "</option>";	
+	$ddd .= "</select>";	
 ?>
 
 <form method="post" action="registerController.php">
@@ -61,7 +61,7 @@ span
 	</tr>
 	<tr>
 		<td><?php if(isset($_GET["street"])) echo "<span>*</span>"; ?>Street</td>
-		<td><input type="text" name="street"></td>
+		<td><input type="text" name="street"></td> Street should be with address. make these all one line?
 	</tr>
 	<tr>
 		<td><?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zipcode</td>
@@ -69,7 +69,7 @@ span
 	</tr>
 	<tr>
 		<td><?php if(isset($_GET["phone"])) echo "<span>*</span>"; ?>Phone Number (Home)</td>
-		<td><input type="text" name="phone"></td>
+		<td><input type="text" name="phone"></td> Phone options should be primary phone and secondary phone - primary phone mandatory, secondary phone optional. a lot of people don't have either a landline or a cell phone.
 	</tr>
 	<tr>
 		<td><?php if(isset($_GET["cell"])) echo "<span>*</span>"; ?>Phone Number (Cell)</td>
