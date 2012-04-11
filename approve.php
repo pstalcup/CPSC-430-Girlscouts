@@ -28,5 +28,5 @@
 		echo "<td>$email</td><td>$name</td><td><select name='$email'>$gdd</select>";	
 	}
 ?>
-	<input type=submit value="Approve Girl">
+	<input type=submit value="Approve Girl"> Change to "approve account"? the user is most often not going to be the girl.
 	</form>
