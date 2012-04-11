@@ -27,6 +27,7 @@
 	}
 	$links = Array();
 	$links["Home"] = "main.php";
+	$links["Register Sale"] = "registerSale.php";
 	if($admin == 1)
 	{
 		$links["Approve Accounts"] = "approve.php";
