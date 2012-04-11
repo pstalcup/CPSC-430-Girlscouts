@@ -1,7 +1,7 @@
 <html>
 	<?php
-		include "menu.php";
 		include "db_connect.php";
+		include "loggedIn.php";
 	?>
 <head>
 	<title>Manage Products</title>

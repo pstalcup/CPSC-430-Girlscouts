@@ -4,13 +4,14 @@
 	include "loggedIn.php";
 	$gdd = "<option name='blank'>-</option>";
 	
-	$query = "SELECT id, firstName, lastName FROM girls;";
+	$query = "SELECT girlId, firstName, lastName FROM girls;";
 	$result = mysqli_query($db,$query);
 	while($row = mysqli_fetch_array($result))
 	{
 		$name = $row["firstName"] . " " . $row["lastName"];
-		$id = $row["id"];
+		$id = $row["girlId"];
 		$gdd .= "<option name='$id'>$name</option>";
+		#echo $name;
 	}
 	
 	$query = "SELECT email,daughter FROM requests;";
