@@ -1,8 +1,14 @@
 <?php
 	session_start();
-	//include "loggedIn.php";
 	include "db_connect.php";
 	
+
+	if(isset($_POST['loop'])) {
+		$_SESSION['post'] = $_POST;
+		header("Location: products.php");
+		exit("");
+	} //bounce unsaved changes back to products.php
+
 	$rows = 1;
 	while(isset($_POST["name".$rows])) {
 		$id = $_POST["id".$rows];
@@ -14,7 +20,6 @@
 		$desc = $_POST["desc".$rows];
 		$quantity = 10;
 		
-		//echo "id=$id<br/>";
 		if($id != "") { //tracks whether entry exists in database
 			$query = "delete from products where productId = ".$id.";";
 			mysqli_query($db, $query) or die ("ERROR DELETING");
