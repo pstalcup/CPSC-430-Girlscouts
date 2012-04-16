@@ -10,7 +10,8 @@
 	<title>Manage Products</title>
 </head>
 <body>
-
+	
+	<br/>
 	PRODUCTS
 	<br/>
 	<form action="productsController.php" method="POST">
@@ -28,8 +29,8 @@
 		<table>
 		<th>Name</th>
 		<th>Price $</th>
-		<th>Type</th>
 		<th>Description</th>
+		<th>Type</th>
 		<?php
 			$rowcount = 1;
 			if($query == "") { //parse data from header (source of information for temporary changes)
@@ -57,11 +58,7 @@
 				} else { $row = mysqli_fetch_array($result); }
 			}
 
-			
-			if(isset($_POST['new'])) { //if changes are unsaved ($_POST has information) and new lines are requested, generate the requested number of lines.
-				$new = $_POST['new'];
-			} else { $new = 0; }
-			for($i=0; $i<$new; $i++) {
+			if(isset($_POST['new'])) {
 				echo "<tr>";
 				echo "<td><input type=text name=\"name".$rowcount."\"></td>";
 				echo "<td><input type=text name=\"price".$rowcount."\"></td>";
@@ -74,7 +71,7 @@
 			
 		?>
 		</table>
-		<input type="hidden" name="new" value=<?php echo "\"".(1)."\""?>/>
+		<input type="hidden" name="new" value="1"/>
 
 		<input type="submit" name="loop" value="Add New Line"/><br/><br/>
 		<input type="submit" name="save" value="Submit"/>
