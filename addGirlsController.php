@@ -1,16 +1,74 @@
-<?php 
-include "db_connect.php";
-$needsadmin = true;
-include "loggedIn.php";
-
-	foreach($_GET as $key => $value)
+<?php
+	include "db_connect.php";
+	$error = "?";
+	$firstName = "";
+	$lastName = "";
+	$DOB = "";
+	$address = "";
+	$street = "";
+	$city = "";
+	$zip = "";
+	
+	if($_POST["firstName"] != "")
 	{
-		$$key = $value;
+		$firstName = $_POST["firstName"];
 	}
-  
-	$query = "INSERT INTO events (dateOfEvent,timeOfEvent,name,description,location) VALUES ('$date','$time','$name','$description','$location');";
-	echo $query;
-	mysqli_query($db,$query);
-	Header("Location: main.php");
+	else 
+	{
+		$error .= "firstName&";
+	}
+	if($_POST["lastName"] != "")
+	{
+		$ln = $_POST["lastName"];
+	}
+	else 
+	{
+		$error .= "lastName&";
+	}
 
-?>
+	if($_POST["address"]!="")
+	{
+		$address = $_POST["address"];
+	}
+	else 
+	{
+		$error .= "address&";
+	}
+	if($_POST["street"] != "")
+	{
+		$street = $_POST["street"];
+	}
+	else 
+	{
+		$error .= "street&";
+	}
+	if($_POST["city"] !="")
+	{
+		$city = $_POST["city"];
+	}
+	else
+	{
+		$error .= "city&";
+	}
+	if($_POST["zip"] != "")
+	{
+		$zip = $_POST["zip"];
+	}
+	else
+	{
+		$error .= "zip&";
+	}
+
+
+	if($error != "?")
+	{
+		header("Location: addGirls.php".$error);
+	}
+	else 
+	{
+		$query = "INSERT INTO girls (firstName,lastName,DOB,address,city, st,zip) VALUES ('$firstName','$lastName','$DOB','$address','$street', '$city', 'VA', '$zip')";
+
+		mysqli_query($db, $query);	
+		header("Location: login.php");
+	}
+	?>

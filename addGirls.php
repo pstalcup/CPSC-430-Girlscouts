@@ -11,7 +11,7 @@
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
 
 <table border="1">
-<form action ="addGirlsController.php" method = "get">
+<form action ="addGirlsController.php" method = "post">
 
 	<tr>
 		<td><?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" style="width:200px;" />
