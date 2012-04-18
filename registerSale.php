@@ -2,7 +2,7 @@
 include "db_connect.php";
 include "loggedIn.php";
 
-$t = array('Cookie'=>1, 'Nut' =>2);
+$t = array(' ' =>1, 'Cookie'=>2, 'Nut' =>3);
 
 #generate dropdown list of product type
 function typesMenu($name = ' ', $options = array()){
@@ -13,11 +13,18 @@ function typesMenu($name = ' ', $options = array()){
 	$html .= '</select>';
 	return $html;
 }
-
-
-
 $type = typesMenu('types', $t);
 
+$p = array()
+
+$query = "SELECT name FROM products;";
+$result = mysqli_query($db, $query);
+while($row = mysqli_fetch_array($result)) {
+	$i = 0;
+		while ($i < mysql_num_fields($result)){
+			$p[$i] = mysqli_fetch_field($result, $i);
+		}
+}
 
 ?>
 <html>
