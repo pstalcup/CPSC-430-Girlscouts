@@ -7,9 +7,8 @@
 
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
 
-<table>
-
 <form method = "post" action ="addGirlsController.php">
+<table>
 
 	<tr>
 		<td>
@@ -68,10 +67,11 @@
 	</tr>
 	
 <input type="submit" value="Submit" />
+</table>
 
 </form>
 
-</table>
+
 
 
 

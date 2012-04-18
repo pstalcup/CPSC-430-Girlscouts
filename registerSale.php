@@ -21,7 +21,7 @@ $query = "SELECT name FROM products;";
 $result = mysqli_query($db, $query);
 $i = 0;
 while($row = mysqli_fetch_array($result)) {
-	$p[$i] = mysqli_fetch_field($result, $i);
+	$p[$i] = $_GET[$row];
 	$i++;
 
 }
