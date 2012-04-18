@@ -1,6 +1,7 @@
 <?php 
-session_start();
-ob_start();
+include "db_connect.php";
+$needsadmin = true;
+include "loggedIn.php";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -10,39 +11,22 @@ ob_start();
 </head>
 
 <body>
-<div id="contents">
+
 <?php
-	
-	if(isset($_POST['loop'])) {
-		$_SESSION['post'] = $_POST;
-		header("Location: addGirls.php");
-		exit("");
-	}
 
 
-	$firstName = mysqli_real_escape_string($db, trim($_POST['firstName']));
-	$lastName = mysqli_real_escape_string($db, trim($_POST['lastName']));
-	$DOB = mysqli_real_escape_string($db, trim($_POST['DOB']));
-	$address = mysqli_real_escape_string($db, trim($_POST['address']));
-	$city = mysqli_real_escape_string($db, trim($_POST['city']));
-	$st = mysqli_real_escape_string($db, trim($_POST['st']));
-	$zip = mysqli_real_escape_string($db, trim($_POST['zip']));
+	$firstName = mysqli_real_escape_string($db, trim($_GET['firstName']));
+	$lastName = mysqli_real_escape_string($db, trim($_GET['lastName']));
+	$DOB = mysqli_real_escape_string($db, trim($_GET['DOB']));
+	$address = mysqli_real_escape_string($db, trim($_GET['address']));
+	$city = mysqli_real_escape_string($db, trim($_GET['city']));
+	$st = mysqli_real_escape_string($db, trim($_GET['st']));
+	$zip = mysqli_real_escape_string($db, trim($_GET['zip']));
   
 	$query = "INSERT INTO girls (firstName, lastName, DOB, address, city, st, zip) VALUES ($firstName, $lastName, $DOB, $address, $city, $st, $zip);"
   
 
-
-
-
 ?>
-
-
-
-</div>
-
-<script type="text/javascript">
-window.location="addGirls.php";
-</script>
 
 
 
