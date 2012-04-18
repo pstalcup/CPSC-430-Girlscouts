@@ -13,7 +13,7 @@
 
 	<tr>
 		<td>
-		<?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" style="width:200px;" />
+		<?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" style="width:200px" />
 		<?php if(isset($_GET["lastName"])) echo "<span>*</span>"; ?>Last Name <input type = "text" name = "lastName" style="width:200px" />
 		</td>
 	</tr>
