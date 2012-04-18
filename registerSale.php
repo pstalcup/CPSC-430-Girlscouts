@@ -16,17 +16,14 @@ function typesMenu($name = ' ', $options = array()){
 $type = typesMenu('types', $t);
 
 #generate list of products
-$product = "<option name='blank'>-</option>";
+$product = "<option name='blank'> </option>";
 	$query = "SELECT productId, name FROM products;";
 	$result = mysqli_query($db, $query);
-	while($row = mysqli_fetch_array($result))
-	{
-		$name = $row["name"];
-		$productId = $row["productId"];
-		$name .= "<option name='$productId'>$name</option>";
-		
+	while($row = mysqli_fetch_array($result)){
+		$productId = $row['productId'];
+		$name = $row['name'];
+		$name .= "<option name='$productId'>$name</option>";	
 	}
-
 
 }
 
@@ -39,7 +36,6 @@ $product = "<option name='blank'>-</option>";
 <body>
 <h2>ADD NEW SALES!</h2>
 
-	
 <form method="post" action="registerSaleController.php">
 
  <table border="1" cellpadding="5" cellspacing="5">
