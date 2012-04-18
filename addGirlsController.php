@@ -29,10 +29,10 @@
 	}else{$error .= "st&";}
 	
 	if($_POST["zip"] != ""){$zip = $_POST["zip"];
-	}else{$error .= "zip&";}
+	}else{$error .= "zip&"; }
 	
 	if($_POST["DOB"] !=""){$city = $_POST["DOB"];
-	}else{$error .= "DOB";}
+	}else{$error .= "DOB"; echo "PLEASE ENTER ALL INFORMATION";}
 
 
 	if($error != "?"){ 
