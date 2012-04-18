@@ -60,10 +60,10 @@
 	</tr>
 	<tr>
 		<td>
-			<?php if(isset($_GET["DOB"])) echo "<span>*</span>"; ?>
+			<?php if(isset($_GET["DOB"])) echo "<span>*</span>"; ?>DOB
 		</td>
 		<td>
-		DOB <input type ="text" name = "DOB" />
+		<input type ="text" name = "DOB" />
 		</td>
 	</tr>
 
