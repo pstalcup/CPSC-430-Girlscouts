@@ -2,8 +2,7 @@
 include "db_connect.php";
 include "loggedIn.php";
 
-$types = array (
-'Cookie', 'Nut' );
+$t = array('Cookie'=>1, 'Nut' =>2);
 
 #generate dropdown list of product type
 function typesMenu($name = ' ', $options = array()){
@@ -17,7 +16,7 @@ function typesMenu($name = ' ', $options = array()){
 
 
 
-$type = typesMenu('types', $types);
+$type = typesMenu('types', $t);
 
 
 ?>
