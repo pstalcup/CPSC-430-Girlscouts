@@ -8,9 +8,9 @@
 <body>
 
 <font face = "century gothic">
+
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
 
-<table border="1">
 <form action ="addGirlsController.php" method = "post">
 
 	<tr>
