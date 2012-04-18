@@ -25,7 +25,6 @@ $product = "<option name='blank'> </option>";
 		$name .= "<option name='$productId'>$name</option>";	
 	}
 
-}
 
 ?>
 <html>
