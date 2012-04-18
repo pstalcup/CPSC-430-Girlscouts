@@ -6,10 +6,9 @@
 ?>
 <HTML>
 
-<font color = "green" face = "century gothic"><h1>ADD GIRL TO TROOP</h1></font>
-
-
 <font face = "century gothic">
+
+<font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
 
 <form action ="addGirlsController.php" method = "post">
 <table border="1">
@@ -33,8 +32,6 @@ DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
 
 </font>
 </br>
-
-<input type="submit" value="Add More Girls" />
 <input type="submit" value="Done" />
 
 
