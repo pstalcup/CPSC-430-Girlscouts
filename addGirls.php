@@ -16,7 +16,7 @@
 <font face = "century gothic">
 
 
-<form action ="addGirlsController.php" method = "post">
+<form action ="addGirlsController.php" method = "get">
 <table border="1">
 <text align="left">
 <tr>
