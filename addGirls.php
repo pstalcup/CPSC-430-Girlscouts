@@ -14,17 +14,17 @@
 <form action ="addGirlsController.php" method = "get">
 
 	<tr>
-		<td> First Name <input type = "text" name = "firstName" style="width:200px;" />
-		Last Name <input type = "textarea" name = "lastName" style="width:200px" /></td>
+		<td><?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" style="width:200px;" />
+		<?php if(isset($_GET["lastName"])) echo "<span>*</span>"; ?>Last Name <input type = "textarea" name = "lastName" style="width:200px" /></td>
 	</tr>
 	<tr>
-		<td>Address <input type = "textarea" name = "address" style="width:492px" /></td>
+		<td><?php if(isset($_GET["address"])) echo "<span>*</span>"; ?>Address <input type = "textarea" name = "address" style="width:492px" /></td>
 	</tr>
 	<tr>
-		<td>City <input type = "textarea" name = "city" style = "width:125px" />
-		State <input type = "textarea" name = "st" style = "width:35px" />
-		Zip Code <input type = "textarea" name = "zip" style = "width:75px" />
-		DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
+		<td><?php if(isset($_GET["city"])) echo "<span>*</span>"; ?>City <input type = "textarea" name = "city" style = "width:125px" />
+		<?php if(isset($_GET["st"])) echo "<span>*</span>"; ?>State <input type = "textarea" name = "st" style = "width:35px" />
+		<?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zip Code <input type = "textarea" name = "zip" style = "width:75px" />
+		<?php if(isset($_GET["DOB"])) echo "<span>*</span>"; ?>DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
 	</tr>
 
 </text>
