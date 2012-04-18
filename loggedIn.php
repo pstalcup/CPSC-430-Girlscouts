@@ -35,6 +35,7 @@
 		$links["Add Girls"] = "addGirls.php";
 		$links["Create Event"] = "createEvents.php";
 		$links["Manage Products"] = "products.php";
+		$links["Booth Sales"] = "boothSales.php";
 	}
 	$links["Logout"] = "logout.php";
 ?>
