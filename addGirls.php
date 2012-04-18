@@ -13,21 +13,35 @@
 
 	<tr>
 		<td>
-		<?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" style="width:200px" />
-		<?php if(isset($_GET["lastName"])) echo "<span>*</span>"; ?>Last Name <input type = "text" name = "lastName" style="width:200px" />
+			<?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name <input type = "text" name = "firstName" />
+		</td>
+	</tr>
+		<td>
+			<?php if(isset($_GET["lastName"])) echo "<span>*</span>"; ?>Last Name <input type = "text" name = "lastName" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-		<?php if(isset($_GET["address"])) echo "<span>*</span>"; ?>Address <input type = "text" name = "address" style="width:492px" />
+			<?php if(isset($_GET["address"])) echo "<span>*</span>"; ?>Address <input type = "text" name = "address" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-		<?php if(isset($_GET["city"])) echo "<span>*</span>"; ?>City <input type = "text" name = "city" style = "width:125px" />
-		<?php if(isset($_GET["st"])) echo "<span>*</span>"; ?>State <input type = "text" name = "st" style = "width:35px" />
-		<?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zip Code <input type = "text" name = "zip" style = "width:75px" />
-		<?php if(isset($_GET["DOB"])) echo "<span>*</span>"; ?>DOB <input type ="text" name = "DOB" style = "width: 137px" />
+			<?php if(isset($_GET["city"])) echo "<span>*</span>"; ?>City <input type = "text" name = "city"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<?php if(isset($_GET["st"])) echo "<span>*</span>"; ?>State <input type = "text" name = "st"   />
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zip Code <input type = "text" name = "zip"  />
+	</tr>
+	<tr>
+		<td>
+			<?php if(isset($_GET["DOB"])) echo "<span>*</span>"; ?>DOB <input type ="text" name = "DOB" />
 		</td>
 	</tr>
 
