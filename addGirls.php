@@ -9,7 +9,7 @@
 
 <table>
 
-<form action ="addGirlsController.php" method = "post">
+<form method = "post" action ="addGirlsController.php">
 
 	<tr>
 		<td>
