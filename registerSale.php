@@ -15,7 +15,7 @@ function typesMenu($name = ' ', $options = array()){
 }
 $type = typesMenu('types', $t);
 
-$p = array()
+$p = array();
 
 $query = "SELECT name FROM products;";
 $result = mysqli_query($db, $query);
