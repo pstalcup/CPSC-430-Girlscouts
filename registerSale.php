@@ -19,12 +19,11 @@ $p = array();
 
 $query = "SELECT name FROM products;";
 $result = mysqli_query($db, $query);
+$i = 0;
 while($row = mysqli_fetch_array($result)) {
-	$i = 0;
-		while ($i < mysqli_num_fields($result)){
-			$p[$i] = mysqli_fetch_field($result, $i);
-			$i++;
-		}
+	$p[$i] = mysqli_fetch_field($result, $i);
+	$i++;
+
 }
 
 ?>
