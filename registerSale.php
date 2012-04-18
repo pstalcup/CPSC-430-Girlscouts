@@ -15,14 +15,18 @@ function typesMenu($name = ' ', $options = array()){
 }
 $type = typesMenu('types', $t);
 
-$product = array();
 
-$query = "SELECT name FROM products;";
-$result = mysqli_query($db, $query);
-$i = 0;
-while($row = mysqli_fetch_array($result)) {
-	$product[$i] = $_GET[$row];
-	$i++;
+$product = "<option name='blank'>-</option>";
+	
+	$query = "SELECT name FROM products;";
+	$result = mysqli_query($db, $query);
+	while($row = mysqli_fetch_array($result))
+	{
+		$name = $row["name"];
+		$name .= "<option name='$productId'>$name</option>";
+		
+	}
+
 
 }
 
