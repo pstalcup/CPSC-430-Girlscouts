@@ -25,8 +25,14 @@
 	if($_POST["city"] !=""){$city = $_POST["city"];
 	}else{$error .= "city&";}
 	
+	if($_POST["st"] !=""){$city = $_POST["st"];
+	}else{$error .= "st&";}
+	
 	if($_POST["zip"] != ""){$zip = $_POST["zip"];
 	}else{$error .= "zip&";}
+	
+	if($_POST["DOB"] !=""){$city = $_POST["DOB"];
+	}else{$error .= "DOB";}
 
 
 	if($error != "?"){ 
