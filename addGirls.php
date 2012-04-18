@@ -5,20 +5,14 @@
 
 ?>
 <HTML>
-
+<body>
 
 <font face = "century gothic">
-
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
 
-
-
-<font face = "century gothic">
-
-
-<form action ="addGirlsController.php" method = "get">
 <table border="1">
-<text align="left">
+<form action ="addGirlsController.php" method = "get">
+
 <tr>
 <td> First Name <input type = "text" name = "firstName" style="width:200px;" />
 Last Name <input type = "textarea" name = "lastName" style="width:200px" /></td>
@@ -32,12 +26,12 @@ State <input type = "textarea" name = "st" style = "width:35px" />
 Zip Code <input type = "textarea" name = "zip" style = "width:75px" />
 DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
 </tr>
+
 </text>
-</table>
+
 </form>
 
-</font>
-</br>
+</table>
 
 <input type="submit" value="Done" />
 
