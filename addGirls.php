@@ -66,11 +66,12 @@
 		<input type ="text" name = "DOB" />
 		</td>
 	</tr>
-
+	
+<input type="submit" value="Submit" />
 
 </form>
 
 </table>
 
-<input type="submit" value="Submit" />
+
 
