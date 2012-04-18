@@ -9,7 +9,6 @@
 
 <form method = "post" action ="addGirlsController.php">
 <table>
-
 	<tr>
 		<td>
 			<?php if(isset($_GET["firstName"])) echo "<span>*</span>"; ?>First Name 
@@ -51,7 +50,7 @@
 	</tr>
 	<tr>
 		<td>
-		<?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zip Code 
+			<?php if(isset($_GET["zip"])) echo "<span>*</span>"; ?>Zip Code 
 		</td>
 		<td>
 			<input type = "text" name = "zip"  />
@@ -66,8 +65,10 @@
 		</td>
 	</tr>
 	
-	<tr> 	
-		<input type="submit" value="Submit" />
+	<tr> 
+		<td>
+			<input type="submit" value="Submit" />
+		</td>
 	</tr>
 </table>
 
