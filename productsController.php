@@ -20,16 +20,21 @@
 		$desc = $_POST["desc".$rows];
 		$quantity = 10;
 		
-		if($id != "") { //tracks whether entry exists in database
-			$query = "UPDATE products SET name='$name', price='$price', description = '$desc', quantity ='$quantity', types='$type' WHERE productId = $id;";
-			mysqli_query($db, $query) or die ("ERROR DELETING");
-		}
-		/*if($name != "") { //determines whether to add or remove entry
+		if($id != "") {
+			if($name != "") {
+				$query = "update products set name='$name', price='$price', description = '$desc', quantity ='$quantity', types='$type' where productId = $id;";
+				mysqli_query($db, $query) or die ("ERROR UPDATING");
+			} else {
+				$query = "delete from products where productId = ".$id.";";
+				mysqli_query($db, $query) or die ("ERROR DELETING");
+			}
+		} else {
+			if($name != "") { 
 			$query = "insert into products values (null,'$type','$name',$price,'$desc',$quantity);";
 			mysqli_query($db, $query) or die ("ERROR INSERTING");
+			}
 		}
-		//if id and name are set, update entry. if only id, delete. if only name, insert. if neither, it's a blank row - do nothing.
-		*/
+		
 		$rows++;
 	}
 	
