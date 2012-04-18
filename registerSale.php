@@ -2,21 +2,12 @@
 include "db_connect.php";
 include "loggedIn.php";
 
-$query = "SELECT types FROM products;";
-$result = mysqli_query($db, $query);
-$type = "<select name=\"type\">";
-while ($row = mysqli_fetch_array($result)){
-$type .= "<option name=\"$row\">$row</option>";
-}
-$type .= "</select>";
+$types = array (
+'Cookie', 'Nut' );
 
-$query = "SELECT name FROM products;";
-$result = mysqli_query($db, $query);
-$product = "<select name=\"product\">";
-while ($row = mysqli_fetch_array($result)){
-$product .= "<option name=\"$row\">$row</option>";
-}
-$product .= "</select>";
+function types(
+
+
 
 
 ?>
