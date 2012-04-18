@@ -6,7 +6,7 @@
 ?>
 
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
-
+<h2>Please fill out all of the information on the required fields.</h2>
 <form method = "post" action ="addGirlsController.php">
 <table>
 	<tr>
