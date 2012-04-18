@@ -11,6 +11,7 @@
 
 <font face = "century gothic">
 
+
 <form action ="addGirlsController.php" method = "post">
 <table border="1">
 <text align="left">
@@ -30,6 +31,9 @@ DOB <input type ="textarea" name = "DOB" style = "width: 137px" />
 </text>
 </table>
 </form>
+
+
+
 
 </font>
 </br>
