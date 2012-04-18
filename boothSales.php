@@ -28,11 +28,16 @@
 	</td>
 </tr>
 
-		<th>Product</td><td>Quantity</td><td>Total</td>
+		<th>Product</th><th>Quantity</th>
 	
 	<?php
-	$rowcount = 1;
-	
+
+	while($row = mysqli_fetch_array($result)) {
+	$name = $row['name'];
+	$quantity = "<input type=text name=quantity maxlength=3 />";
+		
+	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
+	}
 
 
 	?>
