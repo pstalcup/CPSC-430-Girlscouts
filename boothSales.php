@@ -4,7 +4,6 @@
 	include "loggedIn.php";
 
 	if(isset($_SESSION['post'])) {
-
 		$query = "";
 		$_POST = $_SESSION['post'];
 		unset($_SESSION['post']);
@@ -29,23 +28,14 @@
 	</td>
 </tr>
 
-	<th>Product</td><td>Quantity</td><td>Total</td>
+		<th>Product</td><td>Quantity</td><td>Total</td>
+	
 	<?php
 	$rowcount = 1;
+	
 
 
-			
-WHILE { $row = mysqli_fetch_array($result); } //parse data from database (source of information for saved changes)
-	while(isset($row['name'])) {
-		echo "<tr>";
-		echo "<td><input type=text name=\"name".$rowcount."\" value=\"".$row['name']."\"></td>";
-		echo "<td><input type=text maxlength=3 name=\"quantity".$rowcount."\" value=\"".$row['quantity']."  \"></td>";
-		echo "</tr>";
-		$rowcount++;
-
-	}
-
-?>
+	?>
 
 </table>	
 
