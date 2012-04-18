@@ -4,13 +4,11 @@
 	include ("loggedIn.php");
 
 ?>
-<HTML>
-<body>
-
-<font face = "century gothic">
 
 <font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
+
 <table>
+
 <form action ="addGirlsController.php" method = "post">
 
 	<tr>
@@ -40,6 +38,3 @@
 
 <input type="submit" value="Submit" />
 
-
-</body>
-</HTML>
