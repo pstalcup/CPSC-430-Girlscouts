@@ -34,6 +34,6 @@
 	}else {
 	$query = "INSERT INTO girls (firstName,lastName,DOB,address,city, st,zip) VALUES ('$firstName','$lastName','$DOB','$address','$street', '$city', '$state', '$zip')";
 	mysqli_query($db, $query);	
-	header("Location: addGirls.php");
+	header("Location: main.php");
 	}
 	?>
