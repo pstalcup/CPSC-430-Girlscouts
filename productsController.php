@@ -21,15 +21,15 @@
 		$quantity = 10;
 		
 		if($id != "") { //tracks whether entry exists in database
-			$query = "delete from products where productId = ".$id.";";
+			$query = "UPDATE products SET name='$name', price='$price', description = '$desc', quantity ='$quantity', types='$type' WHERE productId = $id;";
 			mysqli_query($db, $query) or die ("ERROR DELETING");
 		}
-		if($name != "") { //determines whether to add or remove entry
+		/*if($name != "") { //determines whether to add or remove entry
 			$query = "insert into products values (null,'$type','$name',$price,'$desc',$quantity);";
 			mysqli_query($db, $query) or die ("ERROR INSERTING");
 		}
 		//if id and name are set, update entry. if only id, delete. if only name, insert. if neither, it's a blank row - do nothing.
-		
+		*/
 		$rows++;
 	}
 	
