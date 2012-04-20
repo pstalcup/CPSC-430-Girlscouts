@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include "db_connect.php";
-	
+	include "loggedIn.php";
 
 	if(isset($_POST['loop'])) {
 		$_SESSION['post'] = $_POST;
