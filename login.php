@@ -15,6 +15,7 @@
 <body>
 
 Welcome to the Girlscouts Troop 868 Manager
+<div class="content">
 <form action="loginController.php" method="post">
 <table>
 	<tr>
@@ -32,5 +33,6 @@ Welcome to the Girlscouts Troop 868 Manager
 </table>
 </form>
 
+</div>
 </body>
 </html>
