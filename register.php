@@ -90,11 +90,8 @@ span
 	<tr>
 		<td>Name of Daughter</td>
 		<td><input type="text" name="daughter"></td>
-	<tr>
-		<td><a href="login.php">Login</a></td>
-		<td><input type="submit" value="Register"></td>
-	</tr>
 </table>
+<input type="submit" value="Request Account">
 </form>
 
 </div>
