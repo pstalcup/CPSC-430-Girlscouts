@@ -2,6 +2,14 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
+?>
+<html>
+<head>
+	<title>Approve Accounts</title>
+</head>
+<body>
+
+<?php
 	$gdd = "<option name='blank'>-</option>";
 	
 	$query = "SELECT girlId, firstName, lastName FROM girls;";
@@ -16,10 +24,12 @@
 	
 	$query = "SELECT email,daughter FROM requests;";
 	$result = mysqli_query($db,$query);
-	echo $query;
+	//echo $query;
 ?>
 <div class = "content">
-	<form action="approveController.php" method=get>
+
+<h2>Approve Requests</h2>
+<form action="approveController.php" method=get>
 <?php
 	echo "<table>";
 	while($row = mysqli_fetch_array($result))
@@ -34,3 +44,6 @@
 	</form>
 
 </div>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 <?php
-	
+	session_start();
+
 	//specify $requires before including to set the level of access for the page
 	if($requires == "admin") {
 		$security = 2;
@@ -68,4 +69,3 @@
 		}
 	?>
 </div>
-<br/>

@@ -4,11 +4,11 @@
 ?>
 <html>
 <head>
-	<title> Register Sale</title>
+	<title> Register Sales</title>
 </head>
 <body>
 
-<h2>ADD NEW SALES!</h2>
+<h2>Add New Sales</h2>
 <form action="registerSaleController.php" method="POST">
 	<table border="1" cellpadding="5" cellspacing="5">
 	<tr><th>Customer</th><th>Product</th><th>Quantity</th></tr>

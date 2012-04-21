@@ -1,6 +1,6 @@
 <?php
 	include "db_connect.php";
-	include "loggedIn.php";
+	include "menu.php";
 
 	if(isset($_SESSION['post'])) {
 		$query = "";
@@ -12,9 +12,14 @@
 	}
 	
 ?>
+<html>
+<head>
+	<title>Booth Sales</title>
+</head>
+<body>
+<div class="content">
 
-<h1> Add a Booth Sale!</h1>
-
+<h2>Add a Booth Sale</h2>
 <form>
 <table>
 <tr>
@@ -43,11 +48,9 @@
 
 </table>	
 
-
-
-
-
-
-
 </table>
 </form>
+
+</div>
+</body>
+</html>

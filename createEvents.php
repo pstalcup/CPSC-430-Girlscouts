@@ -3,7 +3,14 @@
 	$requires = "admin";
 	include "menu.php";
 ?>
+<html>
+<head>
+	<title>Create Events</title>
+</head>
+<body>
 <div class = "content">
+
+<h2>Create Events</h2>
 <table>
 <form action="createEventsController.php" method="get">
 	<tr>
@@ -57,5 +64,7 @@
 	</tr>
 </form>
 </table>
+
 </div>
-		
+</body>
+</html>		

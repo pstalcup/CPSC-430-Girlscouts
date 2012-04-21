@@ -12,24 +12,22 @@ $result = mysqli_query($db, $query);
 </header>
 
 <body>
-
 <div class="content">
+
+<h2>Sales Report</h2>
 <table border = "1" cellpadding="5" font="family: century gothic">
-
 <?php
-echo "<tr><th>Product</th><th>Quantity</th><th>Price</th><th>Total</th></tr>";
-while($row = mysqli_fetch_array($result)) {
-	$name = $row['name'];
-	$quantity = $row['quantity'];
-	$price = $row['price'];
-	$total = $row[$quantiy * $price];
-		
-echo "<tr><td>$name</td><td>$quantity</td><td>$$price</td><td>$total</td></tr>\n";
-}
+	echo "<tr><th>Product</th><th>Quantity</th><th>Price</th><th>Total</th></tr>";
+	while($row = mysqli_fetch_array($result)) {
+		$name = $row['name'];
+		$quantity = $row['quantity'];
+		$price = $row['price'];
+		$total = $row[$quantiy * $price];
+		echo "<tr><td>$name</td><td>$quantity</td><td>$$price</td><td>$total</td></tr>\n";
+	}
 ?>
-
 </table>
-</div>
 
+</div>
 </body>
 </html>
