@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include "db_connect.php";
-	include "loggedIn.php";
+	include "menu.php";
 	
 	$blank = True;
 	$rows = 1;

@@ -3,7 +3,17 @@
 	{
 		echo $_GET["error"];
 	}
+
+	
+	$requires = "none";
+	include "menu.php";
 ?>
+<html>
+<head>
+	<title>Troop Manager Login</title>
+</head>
+<body>
+
 Welcome to the Girlscouts Troop 868 Manager
 <form action="loginController.php" method="post">
 <table>
@@ -21,3 +31,6 @@ Welcome to the Girlscouts Troop 868 Manager
 	</tr>
 </table>
 </form>
+
+</body>
+</html>

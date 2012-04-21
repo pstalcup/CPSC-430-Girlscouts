@@ -1,7 +1,7 @@
 <?php
 	include "db_connect.php";
-	$needsadmin = true;
-	include "loggedIn.php";
+	$requires = "admin";
+	include "menu.php";
 	foreach($_GET as $key => $value)
 	{
 		$$key = $value;

@@ -7,6 +7,9 @@ span
 
 <?php
 	include("db_connect.php");
+	$requires = "none";
+	include("menu.php");
+
 	$ddy = "<select name=\"year\">";
 	for($i = 1900; $i < 2012;$i++)
 	{

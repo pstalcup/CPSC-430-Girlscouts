@@ -4,7 +4,8 @@
 <html>
 	<?php
 		include "db_connect.php";
-		include "loggedIn.php";
+		$requires = "admin";
+		include "menu.php";
 	?>
 <head>
 	<title>Manage Products</title>

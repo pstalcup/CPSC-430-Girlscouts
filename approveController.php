@@ -1,7 +1,7 @@
 <?php
 	include "db_connect.php";
-	$needsadmin = true;
-	include "loggedIn.php";
+	$requires = "admin";
+	include "menu.php";
 	
 	print_r($_GET);
 
