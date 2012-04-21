@@ -1,21 +1,23 @@
 <?php
-	if(isset($_GET["error"]))
-	{
-		echo $_GET["error"];
-	}
-
-	
 	$requires = "none";
 	include "menu.php";
 ?>
 <html>
 <head>
-	<title>Troop Manager Login</title>
+	<title>Login - Troop 868 Manager</title>
 </head>
 <body>
-
-Welcome to the Girlscouts Troop 868 Manager
 <div class="content">
+
+<h2>Welcome to the Girl Scouts Troop 868 Manager!</h2>
+<?php
+	if(isset($_GET['fail'])) {
+		if($_GET['fail'] == 1) {
+			echo "<b>Sorry, that email and password combination does not exist yet...<br/>If you've already registerd, you may have to wait for the administrator to approve your account.</b><br/><br/>";
+		}
+	}
+?>
+Please enter your email and password to log in.
 <form action="loginController.php" method="post">
 <table>
 	<tr>
@@ -26,12 +28,10 @@ Welcome to the Girlscouts Troop 868 Manager
 		<td>Password</td>
 		<td><input name="password" type="password"></td>
 	</tr>
-	<tr>
-		<td><a href="register.php">Register</a></td>
-		<td><input name="login" type="submit" value="Login"></td>
-	</tr>
 </table>
+<input type="submit" value="Login">
 </form>
+Not yet a member? <a href="register.php">Register</a><br/><br/>
 
 </div>
 </body>

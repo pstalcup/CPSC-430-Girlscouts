@@ -22,6 +22,6 @@
 	}
 	else 
 	{
-		header("Location: login.php?error=".$query);
+		header("Location: login.php?fail=1");
 	}
 ?>
