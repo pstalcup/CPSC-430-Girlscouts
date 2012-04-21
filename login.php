@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>
-	<title>Login - Troop 868 Manager</title>
+	<title>Login</title>
 </head>
 <body>
 <div class="content">

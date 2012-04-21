@@ -12,7 +12,7 @@ span
 
 <html>
 <head>
-	<title>Register - Troop Manager</title>
+	<title>Register</title>
 </head>
 <body>
 <div class="content">
