@@ -3,6 +3,7 @@
 	$needsadmin = true;
 	include "loggedIn.php";
 ?>
+<div class = "content">
 <table>
 <form action="createEventsController.php" method="get">
 	<tr>
@@ -56,4 +57,5 @@
 	</tr>
 </form>
 </table>
+</div>
 		

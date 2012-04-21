@@ -11,9 +11,10 @@ $result = mysqli_query($db, $query);
 <title> Sales Report</title>
 </header>
 
-
 <body>
-<table border = "1" cellpadding="5" cellspacing="5" width="100%" font="family: century gothic">
+
+<div class="content">
+<table border = "1" cellpadding="5" font="family: century gothic">
 
 <?php
 echo "<tr><th>Product</th><th >Quantity</th><th>Price</th><th>Total</th></tr>";
@@ -28,7 +29,7 @@ echo "<tr><td>$name  </td><td>$quantity </td><td>$price </td><td> $total</td></t
 ?>
 
 </table>
-
+</div>
 
 </body>
 </html>

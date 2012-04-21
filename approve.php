@@ -18,6 +18,7 @@
 	$result = mysqli_query($db,$query);
 	echo $query;
 ?>
+<div class = "content">
 	<form action="approveController.php" method=get>
 <?php
 	echo "<table>";
@@ -31,3 +32,5 @@
 ?>
 	<input type=submit value="Approve Girl"> Change to "approve account"? the user is most often not going to be the girl.
 	</form>
+
+</div>
