@@ -43,6 +43,7 @@
 	$links["Home"] = "main.php";
 	if($permission >= 1) {
 		$links["Register Sale"] = "registerSale.php";
+	}
 	if($permission >= 2) {
 		$links["Approve Accounts"] = "approve.php";
 		$links["Generate Sales Report"] = "salesReport.php";
@@ -62,9 +63,9 @@
 <div id="toolbar">
 	Links:
 	<?
-		foreach($links as $key => $value)
-		{
-		echo "<a href='$value'>$key</a> ";
+		foreach($links as $key => $value) {
+			echo "<a href='$value'>$key</a> ";
 		}
 	?>
 </div>
+<br/>
