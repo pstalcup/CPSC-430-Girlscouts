@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$quantity = $row['quantity'];
 	$price = $row['price'];
-	$total = $row[$quantity * $price];
+	$total = $row[$quantiy * $price];
 		
 echo "<tr><td>$name  </td><td>$quantity </td><td>$price </td><td> $total</td></tr>\n";
 }
