@@ -1,0 +1,5 @@
+modify sales report to take a girl as input and, if a girl is selected, return sales only for that girl.
+
+add quantity fields to manage inventory
+
+have registersale record which girl is logged in when the sale is made

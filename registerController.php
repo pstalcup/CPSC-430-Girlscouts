@@ -92,22 +92,6 @@
 	{
 		$error .= "zip&";
 	}
-	if($_POST["phone"] != "")
-	{
-		$phone = $_POST["phone"];
-	}
-	else 
-	{
-		$error .="phone&";
-	}
-	if($_POST["cell"] != "")
-	{
-		$cell = $_POST["cell"];
-	}
-	else 
-	{
-		$error .= "cell&";
-	}
 	if($_POST["daughter"] != "")
 	{
 		$daugher = $_POST["daughter"];
@@ -123,7 +107,7 @@
 	}
 	else 
 	{
-		$query = "INSERT INTO users (email,password,firstName,lastName,DOB,address,st,zip,phoneNum,cellNum) VALUES ('$email','$p1','$fn','$ln','$dob','$address','$street','$zip','$phone','$cell')";
+		$query = "INSERT INTO users (email,password,firstName,lastName,DOB,address,st,zip,phoneNum,cellNum) VALUES ('$email','$p1','$fn','$ln','$dob','$address','$street','$zip',0,0)";
 		mysqli_query($db, $query) or die ("error inserting 1");
 
 		$query = "INSERT INTO requests (email,daughter) VALUES ('$email','$daughter');";
