@@ -43,14 +43,14 @@
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
 	
 	}
+	echo "<th /><th />";
+	echo "<th>TOTAL SOLD</TD><th> </th>";
 	?>
-	<br/>
-	<th>TOTAL SOLD</TD><th> </th>
 	
 </table>
 <br />
 
-<h2>ATTENDED:</H2><br />
+<h2>ATTENDED:</H2>
 <table>
 	<?php
 	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
@@ -58,7 +58,7 @@
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$attended = "<input type=checkbox name=attended />";
-		
+	//display rows
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
 
