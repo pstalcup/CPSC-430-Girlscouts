@@ -19,7 +19,7 @@
 <body>
 <div class="content">
 
-<h2>Add a Booth Sale</h2>
+<h2>REGISTER A BOOTH SALE</h2>
 <form>
 <table>
 <tr>
@@ -46,6 +46,21 @@
 
 	?>
 
+	<h2>ATTENDED:</H2>
+	<?php
+	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
+	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
+	while($row = mysqli_fetch_array($result)) {
+	$name = $row['name'];
+	$attended = "<input type=checkbox name=attended />";
+		
+	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
+	}
+
+
+	?>
+	
+	
 </table>	
 
 </table>
