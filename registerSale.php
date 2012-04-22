@@ -10,7 +10,7 @@
 
 <h2>Add New Sales</h2>
 <form action="registerSaleController.php" method="POST">
-	<table border="1" cellpadding="5" cellspacing="5">
+	<table>
 	<tr><th>Customer</th><th>Product</th><th>Quantity</th></tr>
 	<?php
 		$query = "SELECT productId, name FROM products;";

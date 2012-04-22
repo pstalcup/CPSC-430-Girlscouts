@@ -46,12 +46,12 @@
 		$links["Register Sale"] = "registerSale.php";
 	}
 	if($permission >= 2) {
-		$links["Approve Accounts"] = "approve.php";
+		$links["Booth Sales"] = "boothSales.php";
 		$links["Generate Sales Report"] = "salesReport.php";
+		$links["Approve Accounts"] = "approve.php";
 		$links["Add Girls"] = "addGirls.php";
 		$links["Create Event"] = "createEvents.php";
-		$links["Manage Products"] = "products.php";
-		$links["Booth Sales"] = "boothSales.php";
+		$links["Manage Inventory"] = "products.php";
 	}
 	if($permission > 0) {
 		$links["Logout"] = "logout.php";

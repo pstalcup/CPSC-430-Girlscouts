@@ -22,8 +22,8 @@ $result = mysqli_query($db, $query);
 		$name = $row['name'];
 		$quantity = $row['quantity'];
 		$price = $row['price'];
-		$total = $row[$quantiy * $price];
-		echo "<tr><td>$name</td><td>$quantity</td><td>$$price</td><td>$total</td></tr>\n";
+		$total = $quantity * $price;
+		echo "<tr><td>$name</td><td>$quantity</td><td>$$price</td><td>$$total</td></tr>";
 	}
 ?>
 </table>
