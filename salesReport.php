@@ -29,7 +29,7 @@ $result = mysqli_query($db, $query);
 	}
 ?>
 </table>
-
+<br /><br />
 </div>
 </body>
 </html>
