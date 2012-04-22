@@ -7,9 +7,11 @@
 
 	$num = 1;
 	while(isset($_POST['user'.$num])) {
-		if($_POST['girl'] != "-") {
+		if($_POST['girl'.$num] != "-") {
 			$user = $_POST['user'.$num];
 			$girl = $_POST['girl'.$num];
+			echo $user;
+			echo $girl;
 			$query = "UPDATE users SET girlId=(SELECT girlId from girls where CONCAT(firstName,' ',lastName) = '$girl') where email='$user';";
 			mysqli_query($db,$query) or die ("error updating");
 			$query = "delete from requests where email='$user';";
