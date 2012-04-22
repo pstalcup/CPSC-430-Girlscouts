@@ -53,8 +53,8 @@
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
 	
 	}
-	echo "<th></th><th></th>";
-	echo "<th>TOTAL SOLD</TD><th><span id=printTheAnswerHere>0</span></th>";
+	echo "<tr><th></th><th></th></tr>";
+	echo "<tr><th><BUTTON onclick = addQuantity()>Calculate Total Sold</BUTTON></TD><th><span id=printTheAnswerHere>0</span></th></tr>";
 	?>
 	
 </table>
