@@ -44,13 +44,13 @@
 	
 	}
 	?>
+	<br/>
 	<th>TOTAL SOLD</TD><th> </th>
 	
 </table>
 <br />
 
-<h2>ATTENDED:</H2>
-	
+<h2>ATTENDED:</H2><br />
 <table>
 	<?php
 	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
@@ -62,10 +62,10 @@
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
 
-	?>
-	
+	?>	
 
 </table>
+<br />
 <input type="submit" value="Submit Booth Sale" />
 </form>
 
