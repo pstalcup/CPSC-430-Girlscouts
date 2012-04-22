@@ -7,3 +7,5 @@ generate sales report needs to display booth sales as well
 add quantity fields to manage inventory
 
 need to make delete events page
+
+approve accounts needs to display girl name
