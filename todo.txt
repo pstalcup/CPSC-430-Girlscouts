@@ -6,4 +6,4 @@ generate sales report needs to display booth sales as well
 
 add quantity fields to manage inventory
 
-have registersale record which girl is logged in when the sale is made
+need to make delete events page
