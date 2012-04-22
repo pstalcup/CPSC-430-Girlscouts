@@ -35,7 +35,7 @@
 	<th>Product</th><th>Quantity</th>
 	
 	<?php
-	$total = 0
+	
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$quantity = "<input type=text name=quantity maxlength=3 />";
@@ -43,9 +43,8 @@
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
 	
 	}
-	<th>TOTAL SOLD<TD><th>$total </th>
 	?>
-	
+	<th>TOTAL SOLD</TD><th> </th>
 	
 </table>
 <br />
