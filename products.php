@@ -8,6 +8,8 @@
 	<title>Manage Products</title>
 </head>
 <body>
+<div class = "content">
+
 	<h2>Manage Inventory</h2>
 	<form action="productsController.php" method="POST">
 		<?php
@@ -71,6 +73,6 @@
 		<input type="submit" name="loop" value="Add New Line"/><br/><br/>
 		<input type="submit" name="save" value="Submit"/>
 	</form>
-
+</div>
 </body>
 </html>
