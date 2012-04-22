@@ -36,10 +36,14 @@
 	<th>Product</th><th>Quantity</th>
 	
 	<?php
+	
+	
+	
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$quantity = "<input type=text name=quantity id=qty />";
 		
+	
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
 	
 	}
@@ -51,6 +55,7 @@
 <h2>ATTENDED:</H2>
 <table>
 	<?php
+	
 	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
 	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
 	$row = 1;
