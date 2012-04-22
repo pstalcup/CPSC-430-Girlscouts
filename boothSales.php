@@ -20,7 +20,7 @@
 <div class="content">
 
 <h2>REGISTER A BOOTH SALE</h2>
-<form>
+<form name="boothSale" action="boothSalesController.php" method="POST">
 <table>
 <tr>
 	<td>Date </td>
@@ -32,19 +32,20 @@
 	</td>
 </tr>
 
-		<th>Product</th><th>Quantity</th>
+	<th>Product</th><th>Quantity</th>
 	
 	<?php
-
+	$total = 0
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$quantity = "<input type=text name=quantity maxlength=3 />";
 		
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
+	
 	}
-
-
-?>
+	<th>TOTAL SOLD<TD><th>$total </th>
+	?>
+	
 	
 </table>
 <br />
@@ -64,10 +65,9 @@
 
 	?>
 	
-	
-	
 
 </table>
+<input type="submit" value="Submit Booth Sale" />
 </form>
 
 </div>
