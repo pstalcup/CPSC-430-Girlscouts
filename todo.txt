@@ -1,4 +1,8 @@
-modify sales report to take a girl as input and, if a girl is selected, return sales only for that girl.
+modify register sale to attribute a girl to each sale
+
+make booth sale controller
+
+generate sales report needs to display booth sales as well
 
 add quantity fields to manage inventory
 
