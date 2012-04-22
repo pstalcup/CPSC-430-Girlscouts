@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	echo '<LINK href="style.css" rel="stylesheet" type="text/css">';
 	//specify $requires before including to set the level of access for the page
 	if($requires == "admin") {
 		$security = 2;
