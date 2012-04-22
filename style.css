@@ -1,6 +1,27 @@
+img
+{
+	position: absolute;
+	bottom: 0px;
+}
 body
 {
 	background-color: #599124;
+}
+a:link
+{
+	color:black;
+}
+a:visited
+{
+	color:black;
+}
+a:active
+{
+	color:black;
+}
+a:hover
+{
+	color:gray;
 }
 div#toolbar
 {
