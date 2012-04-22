@@ -19,10 +19,12 @@
 			$result = mysqli_query($db,$query);
 			if($row = mysqli_fetch_array($result))
 			{
-				Header("Location: notApproved.php");
-				exit("");
+				//header("Location: notApproved.php");
+				//exit(""); //this creates an infinite loop
+				$permission = 0;
+			} else {
+				$permission = 1;
 			}
-			$permission = 1;
 		}
 	} else {
 		$permission = 0; //user is not logged in.

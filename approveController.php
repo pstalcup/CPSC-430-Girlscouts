@@ -3,20 +3,20 @@
 	$requires = "admin";
 	include "menu.php";
 	
-	print_r($_GET);
+	//print_r($_POST);
 
-	foreach($_GET as $key => $val)
-	{
-		if($val != "-")
-		{
-			echo $key." ".$val."</br>";
-			$query = "UPDATE users SET girlId=(SELECT girlId from girls where CONCAT(firstName,' ',lastName) = '$val') where email='$key';";
-			echo $query;
-			mysqli_query($db,$query);
-			$query = "DELETE * FROM requests WHERE email='$key';";
-			mysqli_query($db,$query);
+	$num = 1;
+	while(isset($_POST['user'.$num])) {
+		if($_POST['girl'] != "-") {
+			$user = $_POST['user'.$num];
+			$girl = $_POST['girl'.$num];
+			$query = "UPDATE users SET girlId=(SELECT girlId from girls where CONCAT(firstName,' ',lastName) = '$girl') where email='$user';";
+			mysqli_query($db,$query) or die ("error updating");
+			$query = "delete from requests where email='$user';";
+			mysqli_query($db,$query) or die ("error deleting");
 		}
+		$num++;
 	}
 	
-	#Header("Location: approve.php");
+	//header("Location: approve.php");
 ?>

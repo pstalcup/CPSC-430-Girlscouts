@@ -113,6 +113,10 @@
 		$daugher = $_POST["daughter"];
 	}
 
+	if($p1 != $p2) {
+		$error .= "mismatch&"; //just a guess. need to catch mismatched passwords before we start inserting into the database.
+	}
+	
 	if($error != "?")
 	{
 		header("Location: register.php".$error);
@@ -120,15 +124,11 @@
 	else 
 	{
 		$query = "INSERT INTO users (email,password,firstName,lastName,DOB,address,st,zip,phoneNum,cellNum) VALUES ('$email','$p1','$fn','$ln','$dob','$address','$street','$zip','$phone','$cell')";
-	
-		if($p1 == $p2) 
-		{
-			if (!mysqli_query($db, $query)) {
-    				printf("Errormessage: %s\n", mysqli_error($db));
-			}
-		}
+		mysqli_query($db, $query) or die ("error inserting 1");
+
 		$query = "INSERT INTO requests (email,daughter) VALUES ('$email','$daughter');";
-		mysqli_query($db, $query);	
-		header("Location: login.php");
+		mysqli_query($db, $query) or die ("error inserting 2");
+
+		header("Location: notApproved.php");
 	}
 	?>
