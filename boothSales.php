@@ -53,7 +53,7 @@
 	<?php
 	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
 	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
-	$row = 1
+	$row = 1;
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$attended = "<input type='checkbox' name='attending'.$row />";
@@ -61,7 +61,7 @@
 	//display rows
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
-	rows = 1
+	rows = 1;
 	if(isset($_POST[attending.$rows])){
 	
 	
