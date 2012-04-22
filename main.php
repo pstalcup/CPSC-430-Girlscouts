@@ -2,6 +2,7 @@
 	include "db_connect.php";
 	include "menu.php";
 ?>
+<div class=content>
 <h2>Patches & Incentives</h2>
 <table>
 	<tr>
@@ -37,7 +38,6 @@
 	<title>Troop Manager Home</title>
 </head>
 <body>
-<div class="content">
 
 <?php
 	$query = "SELECT * FORM attending WHERE girlId = (SELECT girlId FROM users WHERE email=$e);";
