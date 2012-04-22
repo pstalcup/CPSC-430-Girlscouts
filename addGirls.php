@@ -1,13 +1,19 @@
 <?php
 	include("db_connect.php");
-	$needsadmin = true;
-	include ("loggedIn.php");
+	$requires = "admin";
+	include ("menu.php");
 
 ?>
+<html>
+<head>
+	<title>Add Girl to Troop</title>
+</head>
+<body>
+<div class="content">
 
-<font color = "green"><h1>ADD GIRL TO TROOP</h1></font>
-<h2>Please fill out all of the information on the required fields.</h2>
-<form method = "post" action ="addGirlsController.php">
+<h2>Add Girl to Troop</h2>
+<b>Please fill out all of the information on the required fields.</b>
+<form method = "POST" action ="addGirlsController.php">
 <table>
 	<tr>
 		<td>
@@ -71,10 +77,8 @@
 		</td>
 	</tr>
 </table>
-
 </form>
 
-
-
-
-
+</div>
+</body
+</html>

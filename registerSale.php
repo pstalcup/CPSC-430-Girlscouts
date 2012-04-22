@@ -1,63 +1,47 @@
 <?php
-include "db_connect.php";
-include "loggedIn.php";
-
-$t = array(' ' =>1, 'Cookie'=>2, 'Nut' =>3);
-
-#generate dropdown list of product type
-function typesMenu($name = ' ', $options = array()){
-	$html = '<select name="'.$name.'">';
-	foreach ($options as $option => $value) {
-		$html .= '<option value='.$value.'>'.$option.'</option>';
-	}
-	$html .= '</select>';
-	return $html;
-}
-$type = typesMenu('types', $t);
-
-#generate list of products
-$product = "<option name='blank'> </option>";
-	$query = "SELECT productId, name FROM products;";
-	$result = mysqli_query($db, $query);
-	while($row = mysqli_fetch_array($result)){
-		$productId = $row['productId'];
-		$name = $row['name'];
-		$name .= "<option name='$productId'>$name</option>";	
-	}
-
-
+	include "db_connect.php";
+	include "menu.php";
 ?>
 <html>
 <head>
-<title> Register Sale</title>
+	<title> Register Sales</title>
 </head>
-
 <body>
-<h2>ADD NEW SALES!</h2>
 
-<form method="post" action="registerSaleController.php">
-
- <table border="1" cellpadding="5" cellspacing="5">
- <tr><th>Customer</th><th>Type</th><th>Product</th><th>Quantity</th></tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty'/> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- <tr><td><input type = 'text' /></td><td><?php echo $type;?></td><td><?php echo $product;?></td><td><input type='text' name='qty' /> </td><tr>
- 
- 
-
-</table>
- <input type = "submit" value = "Register Sales">
+<h2>Add New Sales</h2>
+<form action="registerSaleController.php" method="POST">
+	<table>
+	<tr><th>Customer</th><th>Product</th><th>Quantity</th></tr>
+	<?php
+		$query = "SELECT productId, name FROM products;";
+		$result = mysqli_query($db, $query);
+		$numproducts = 0;
+		while($row = mysqli_fetch_array($result)) {
+			$name[$numproducts] = $row['name'];
+			$id[$numproducts] = $row['productId'];
+			$numproducts++;
+		}
+		for($i=1; $i<9; $i++) {
+			echo "<tr><td><input type=\"text\" name=\"user".$i."\"/></td>";
+			echo "<td><select name=\"id".$i."\"><option></option>";
+			for($x=0; $x<$numproducts; $x++) {
+				echo "<option value=\"".$id[$x]."\">".$name[$x]."</option>";
+			}
+			echo "</select></td>";
+			echo "<td><input type=\"text\" name=\"qty".$i."\"/></td></tr>";
+		}
+	?>
+	</table>
+	<input type="hidden" name="girl" value="<?php echo "0"; ?>"/>
+	<?php
+		if($numproducts == 0) {
+			echo "There are no products in inventory right now.";
+		} else {
+			echo "<input type=\"submit\" value=\"Register Sales\"/>";
+		}
+	?>
 </form>
 
 
-
 </body>
-
-
-
 </html>

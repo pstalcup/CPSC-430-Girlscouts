@@ -1,7 +1,15 @@
 <?php
 	include "db_connect.php";
-	$needsadmin = true;	
-	include "loggedIn.php";
+	$requires = "admin";
+	include "menu.php";
+?>
+<html>
+<head>
+	<title>Approve Accounts</title>
+</head>
+<body>
+
+<?php
 	$gdd = "<option name='blank'>-</option>";
 	
 	$query = "SELECT girlId, firstName, lastName FROM girls;";
@@ -16,18 +24,28 @@
 	
 	$query = "SELECT email,daughter FROM requests;";
 	$result = mysqli_query($db,$query);
-	echo $query;
+	//echo $query;
 ?>
-	<form action="approveController.php" method=get>
+<div class = "content">
+
+<h2>Approve Requests</h2>
+<form action="approveController.php" method="POST">
+<table>
 <?php
-	echo "<table>";
+	$num = 1;
 	while($row = mysqli_fetch_array($result))
 	{
 		$email = $row["email"];
 		$name = $row["daughter"];
-		echo "<tr>";
-		echo "<td>$email</td><td>$name</td><td><select name='$email'>$gdd</select>";	
+		echo "<tr><td>$email</td><td>$name</td><td><select name=\"girl".$num."\">$gdd</select></td></tr>";
+		echo "<input type=\"hidden\" name=\"user".$num."\" />";
+		$num++;
 	}
 ?>
-	<input type=submit value="Approve Girl"> Change to "approve account"? the user is most often not going to be the girl.
-	</form>
+</table>
+<input type=submit value="Approve">
+</form>
+
+</div>
+</body>
+</html>

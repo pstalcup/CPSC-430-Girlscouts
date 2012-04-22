@@ -1,6 +1,6 @@
 <?php
 	include "db_connect.php";
-	include "loggedIn.php";
+	include "menu.php";
 ?>
 <h2>Patches & Incentives</h2>
 <table>
@@ -32,6 +32,13 @@
 <br/>
 <br/>
 <h2>Events</h2>
+<html>
+<head>
+	<title>Troop Manager Home</title>
+</head>
+<body>
+<div class="content">
+
 <?php
 	$query = "SELECT * FORM attending WHERE girlId = (SELECT girlId FROM users WHERE email=$e);";
 	$attending = Array();
@@ -71,3 +78,7 @@
 	while($row = mysqli_fetch_array($result));
 	echo "</form>";
 ?>
+
+</div>
+</body>
+</html>

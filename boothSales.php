@@ -1,7 +1,6 @@
 <?php
-
 	include "db_connect.php";
-	include "loggedIn.php";
+	include "menu.php";
 
 	if(isset($_SESSION['post'])) {
 		$query = "";
@@ -13,10 +12,16 @@
 	}
 	
 ?>
+<html>
+<head>
+	<title>Booth Sales</title>
+</head>
 
-<h1> Add a Booth Sale!</h1>
+<body>
+<div class="content">
 
-<form>
+<h2>REGISTER A BOOTH SALE</h2>
+<form name="boothSale" action="boothSalesController.php" method="POST">
 <table>
 <tr>
 	<td>Date </td>
@@ -28,27 +33,41 @@
 	</td>
 </tr>
 
-		<th>Product</th><th>Quantity</th>
+	<th>Product</th><th>Quantity</th>
 	
 	<?php
-
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
-	$quantity = "<input type=text name=quantity maxlength=3 />";
+	$quantity = "<input type=text name=quantity id=qty />";
 		
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
+	
+	}
+	?>
+	
+</table>
+<br />
+
+<h2>ATTENDED:</H2>
+<table>
+	<?php
+	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
+	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
+	while($row = mysqli_fetch_array($result)) {
+	$name = $row['name'];
+	$attended = "<input type=checkbox name=attended />";
+	
+	//display rows
+	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
 
-
-	?>
-
-</table>	
-
-
-
-
-
-
+	?>	
 
 </table>
+<br />
+<input type="submit" value="Submit Booth Sale" />
 </form>
+
+</div>
+</body>
+</html>

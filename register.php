@@ -1,3 +1,8 @@
+<?php
+	include("db_connect.php");
+	$requires = "none";
+	include("menu.php");
+?>
 <style type="text/css">
 span
 {
@@ -5,8 +10,14 @@ span
 }
 </style>
 
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+<div class="content">
+
 <?php
-	include("db_connect.php");
 	$ddy = "<select name=\"year\">";
 	for($i = 1900; $i < 2012;$i++)
 	{
@@ -29,7 +40,8 @@ span
 	$ddd .= "</select>";	
 ?>
 
-<form method="post" action="registerController.php">
+<h2>Register</h2>
+<form method="POST" action="registerController.php">
 <table>
 	<tr>
 		<td><?php if(isset($_GET["email"])) echo "<span>*</span>"; ?>E-Mail</td>
@@ -78,10 +90,11 @@ span
 	<tr>
 		<td>Name of Daughter</td>
 		<td><input type="text" name="daughter"></td>
-	<tr>
-		<td><a href="login.php">Login</a></td>
-		<td><input type="submit" value="Register"></td>
-	</tr>
 </table>
+<input type="submit" value="Request Account">
 </form>
+
+</div>
+</body>
+</html>
 	

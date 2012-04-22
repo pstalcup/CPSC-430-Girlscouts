@@ -1,19 +1,14 @@
 <?php
-	session_start();
+	include "db_connect.php";
+	$requires = "admin";
+	include "menu.php";
 ?>
 <html>
-	<?php
-		include "db_connect.php";
-		include "loggedIn.php";
-	?>
 <head>
 	<title>Manage Products</title>
 </head>
 <body>
-	
-	<br/>
-	PRODUCTS
-	<br/>
+	<h2>Manage Inventory</h2>
 	<form action="productsController.php" method="POST">
 		<?php
 			if(isset($_SESSION['post'])) { //displaying unsaved changes that have been bounced back by the controller
