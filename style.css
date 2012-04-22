@@ -1,5 +1,18 @@
+body
+{
+	background-color: #599124;
+}
+div#toolbar
+{
+	padding: 10px;
+	background-color: #FFFFFF;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black; 	
+}
 div.content
 {
+	background-color: #FFFFFF;
 	position: absolute;
 	left: 25%;
 	right: 25%;
