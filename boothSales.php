@@ -54,7 +54,7 @@
 	
 	}
 	echo "<tr><th></th><th></th></tr>";
-	echo "<tr><th><BUTTON onclick = addQuantity()>Calculate Total Sold</BUTTON></TD><th><span id=printTheAnswerHere>0</span></th></tr>";
+	echo "<tr><th>Total Sold</TD><th><span onchange = addQuantity() id=printTheAnswerHere>0</span></th></tr>";
 	?>
 	
 </table>
