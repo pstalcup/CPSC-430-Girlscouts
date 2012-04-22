@@ -15,16 +15,6 @@
 <html>
 <head>
 	<title>Booth Sales</title>
-	<script type = "text/javascript">
-	//add up totals
-	var total =0
-	function addQuantity(){
-		var qty = parseFloat(document.getElementById("qty").value);
-		total += qty;
-	}
-	//display the total
-	document.getElementById("printTheAnswerHere").innerHTML = total;
-	</script>
 </head>
 
 <body>
@@ -53,8 +43,6 @@
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
 	
 	}
-	echo "<tr><th></th><th></th></tr>";
-	echo "<tr><th>Total Sold</TD><th><span onchange = addQuantity() id=printTheAnswerHere>0</span></th></tr>";
 	?>
 	
 </table>
