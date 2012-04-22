@@ -38,7 +38,7 @@
 		$email = $row["email"];
 		$name = $row["daughter"];
 		echo "<tr><td>$email</td><td>$name</td><td><select name=\"girl".$num."\">$gdd</select></td></tr>";
-		echo "<input type=\"hidden\" name=\"user".$num."\" />";
+		echo "<input type=\"hidden\" name=\"user".$num."\" value=\"".$email."\" />";
 		$num++;
 	}
 ?>
