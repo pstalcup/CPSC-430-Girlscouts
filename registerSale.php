@@ -7,6 +7,7 @@
 	<title> Register Sales</title>
 </head>
 <body>
+<div class ="content">
 
 <h2>Add New Sales</h2>
 <form action="registerSaleController.php" method="POST">
@@ -42,6 +43,7 @@
 	?>
 </form>
 
+</div>
 
 </body>
 </html>
