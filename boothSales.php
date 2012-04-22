@@ -61,13 +61,7 @@
 	//display rows
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
-	rows = 1;
-	if(isset($_POST[$attending.$rows])){
-	
-	
-	}
-	
-	
+
 	?>	
 
 </table>
