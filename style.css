@@ -1,3 +1,10 @@
+input
+{
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
 img
 {
 	position: absolute;
@@ -5,6 +12,7 @@ img
 }
 body
 {
+	font-family: Helvetica;
 	background-color: #599124;
 }
 a:link
@@ -22,6 +30,16 @@ a:active
 a:hover
 {
 	color:gray;
+}
+div.btm
+{
+	position: absolute;
+	bottom: 0px;
+	right: 15px;
+}
+div.btm.a:hover
+{
+	color: white;
 }
 div#toolbar
 {

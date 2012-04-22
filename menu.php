@@ -71,3 +71,8 @@
 		}
 	?>
 </div>
+<img src="gsLogo.png">
+<div class="btm">
+	Questions? <a href="mailto:japwahl@gmail.com">Contact the Webmaster</a><br/>
+	Troop 868
+</div>
