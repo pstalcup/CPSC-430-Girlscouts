@@ -44,9 +44,14 @@
 	}
 
 
-	?>
+?>
+	
+</table>
+<br />
 
-	<h2>ATTENDED:</H2>
+<h2>ATTENDED:</H2>
+	
+<table>
 	<?php
 	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
 	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
@@ -57,11 +62,10 @@
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
 
-
 	?>
 	
 	
-</table>	
+	
 
 </table>
 </form>
