@@ -35,16 +35,16 @@
 	<th>Product</th><th>Quantity</th>
 	
 	<?php
-	
+	$total = 0
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$quantity = "<input type=text name=quantity maxlength=3 />";
 		
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
-	
+	$total += $_POST[$quantity];
 	}
-	echo "<th /><th />";
-	echo "<th>TOTAL SOLD</TD><th> </th>";
+	echo "<th></th><th></th>";
+	echo "<th>TOTAL SOLD</TD><th>$total</th>";
 	?>
 	
 </table>
@@ -58,6 +58,7 @@
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$attended = "<input type=checkbox name=attended />";
+	
 	//display rows
 	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
 	}
