@@ -15,7 +15,18 @@
 <html>
 <head>
 	<title>Booth Sales</title>
+	<script type = "text/javascript">
+	//add up totals
+	var total =0
+	function addQuantity(){
+		var qty = parseFloat(document.getElementById("qty").value);
+		total += qty;
+	}
+	//display the total
+	document.getElementById("printTheAnswerHere").innerHTML = total;
+	</script>
 </head>
+
 <body>
 <div class="content">
 
@@ -35,16 +46,15 @@
 	<th>Product</th><th>Quantity</th>
 	
 	<?php
-	$total = 0;
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
-	$quantity = "<input type=text name=quantity maxlength=3 />";
+	$quantity = "<input type=text name=quantity id=qty />";
 		
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
-	$total += $_POST[$quantity];
+	
 	}
 	echo "<th></th><th></th>";
-	echo "<th>TOTAL SOLD</TD><th>$total</th>";
+	echo "<th>TOTAL SOLD</TD><th><span id=printTheAnswerHere>0</span></th>";
 	?>
 	
 </table>
