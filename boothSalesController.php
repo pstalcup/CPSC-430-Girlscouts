@@ -21,9 +21,11 @@
 	//enter booth sale into event based on date to help admin keep track of location and date of booth sale
 	$query ="INSERT INTO events (dateOfEvent,timeOfEvent,name,description,location) VALUES ('$date','$time','$name','$description','$location');";
 	mysqli_query($db,$query);
+	//get the event id
+	$query ="SELECT MAX(eventId) FROM events;";
+	$eid = mysqli_query($db,$query);
 	
 	//Add a new transaction and new sales
-
 	$query = "INSERT INTO transactions (girlId) VALUES ('0');";	
 	mysqli_query($db, $query);
 	
@@ -61,47 +63,16 @@
 	$total  = $total + $qty;
 	
 	//Add Girls
-
-	$query = "SELECT * FROM attending WHERE girlId = (SELECT girlId FROM users WHERE email='$e');";
-	$attending = Array();
-	$result = mysqli_query($db,$query);
-	while($row = mysqli_fetch_array($result))
+	foreach($_GET as $key => $value)
 	{
-		$attending[] = $row["eventId"];
+		$query = "INSERT INTO attending (eventId, girlId) VALUES ('$eid', '$key');";
+		echo $query."<br>";	
+		mysqli_query($db,$query);
+		
+		$attendees++;
 	}
-	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE name <>'Booth Sale' AND DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
-	$result = mysqli_query($db,$query);
-	echo "<form action='mainController.php'>";
-	echo "<table>";
-	$row = Array("name" => "<b>Name</b>","description"=>"<b>Description</b>","attending"=>"Attend?", "dateOfEvent"=>"<b>Date</b>", "timeOfEvent"=>"<b>Time</b>");
-	do
-	{
-		echo "<tr>";
-		echo "<td>".$row["name"]."</td>";
-		echo "<td>".$row["description"]."</td>";
-		echo "<td>".$row["dateOfEvent"]."&nbsp;</td>";
-		echo "<td>".$row["timeOfEvent"]."</td>";
-		if($row["attending"] != "")
-		{
-			echo "<td>".$row["attending"]."</td>";
-		}
-		else
-		{
-			$eid = $row["eventId"];
-			echo "<td>";
-			echo "<input type='checkbox' name='$eid'";
-			if(in_array($row["eventId"],$attending))
-			{
-				echo "checked";
-			}
-			echo ">";
-			echo "</td>";
-		}
-		echo "</tr>";
-	}
-	while($row = mysqli_fetch_array($result));
 	
-	$attendees++;
+	
 
 	}
 	
