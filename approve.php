@@ -31,18 +31,18 @@
 
 <h2>Approve Requests</h2>
 <form action="approveController.php" method="POST">
-<table>
+<table cellpadding="5">
 <?php
 	$num = 1;
 	while($row = mysqli_fetch_array($result))
 	{
 		if($num == 1) {
-			echo "<tr><th>User</th><th>Daughter</th><th>Registered Scout</th></tr>";
+			echo "<tr><th>User</th><th>Claims...</th><th>Matches...</th></tr>";
 		}
 	
 		$email = $row["email"];
 		$name = $row["daughter"];
-		echo "<tr><td>$email</td>  <td>$name</td>  <td><select name=\"girl".$num."\">$gdd</select></td></tr>";
+		echo "<tr><td>$email</td><td>$name</td><td><select name=\"girl".$num."\">$gdd</select></td></tr>";
 		echo "<input type=\"hidden\" name=\"user".$num."\" value=\"".$email."\" />";
 		$num++;
 	}
