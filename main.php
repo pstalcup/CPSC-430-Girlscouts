@@ -40,23 +40,25 @@
 <body>
 
 <?php
-	$query = "SELECT * FORM attending WHERE girlId = (SELECT girlId FROM users WHERE email=$e);";
+	$query = "SELECT * FROM attending WHERE girlId = (SELECT girlId FROM users WHERE email='$e');";
 	$attending = Array();
 	$result = mysqli_query($db,$query);
 	while($row = mysqli_fetch_array($result))
 	{
 		$attending[] = $row["eventId"];
 	}
-	$query = "SELECT * FROM events WHERE DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
+	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
 	$result = mysqli_query($db,$query);
 	echo "<form action='mainController.php'>";
 	echo "<table>";
-	$row = Array("name" => "<b>Name</b>","description"=>"<b>Description</b>","attending"=>"Attend?");
+	$row = Array("name" => "<b>Name</b>","description"=>"<b>Description</b>","attending"=>"Attend?", "dateOfEvent"=>"<b>Date</b>", "timeOfEvent"=>"<b>Time</b>");
 	do
 	{
 		echo "<tr>";
 		echo "<td>".$row["name"]."</td>";
 		echo "<td>".$row["description"]."</td>";
+		echo "<td>".$row["dateOfEvent"]."&nbsp;</td>";
+		echo "<td>".$row["timeOfEvent"]."</td>";
 		if($row["attending"] != "")
 		{
 			echo "<td>".$row["attending"]."</td>";
@@ -65,10 +67,11 @@
 		{
 			$eid = $row["eventId"];
 			echo "<td>";
+			echo $eid;
 			echo "<input type='checkbox' name='$eid'";
-			if(in_array($attending,$row["eventId"]))
+			if(in_array($row["eventId"],$attending))
 			{
-				echo "checked='true'";
+				echo "checked";
 			}
 			echo ">";
 			echo "</td>";
@@ -78,7 +81,8 @@
 	while($row = mysqli_fetch_array($result));
 	echo "</form>";
 ?>
-
+</table>
+<input type="submit" value="Attending?">
 </div>
 </body>
 </html>
