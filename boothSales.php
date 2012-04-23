@@ -59,16 +59,44 @@
 <table>
 	<?php
 	
-	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
-	$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
-	$row = 1;
-	while($row = mysqli_fetch_array($result)) {
-	$name = $row['name'];
-	$attended = "<input type='checkbox' name=attending.$row />";
-	
-	//display rows
-	echo "<tr><td>$name  </td><td>$attended </td></tr>\n";
+	$query = "SELECT * FROM attending ;";
+	$attending = Array();
+	$result = mysqli_query($db,$query);
+	while($row = mysqli_fetch_array($result))
+	{
+		$attending[] = $row["eventId"];
 	}
+	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE name <>'Booth Sale' AND DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
+	$result = mysqli_query($db,$query);
+	echo "<form action='mainController.php'>";
+	echo "<table>";
+	$row = Array("name" => "<b>Name</b>","description"=>"<b>Description</b>","attending"=>"Attend?", "dateOfEvent"=>"<b>Date</b>", "timeOfEvent"=>"<b>Time</b>");
+	do
+	{
+		echo "<tr>";
+		echo "<td>".$row["name"]."</td>";
+		echo "<td>".$row["description"]."</td>";
+		echo "<td>".$row["dateOfEvent"]."&nbsp;</td>";
+		echo "<td>".$row["timeOfEvent"]."</td>";
+		if($row["attending"] != "")
+		{
+			echo "<td>".$row["attending"]."</td>";
+		}
+		else
+		{
+			$eid = $row["eventId"];
+			echo "<td>";
+			echo "<input type='checkbox' name='$eid'";
+			if(in_array($row["eventId"],$attending))
+			{
+				echo "checked";
+			}
+			echo ">";
+			echo "</td>";
+		}
+		echo "</tr>";
+	}
+	while($row = mysqli_fetch_array($result));
 
 	?>	
 
