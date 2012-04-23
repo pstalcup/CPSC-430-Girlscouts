@@ -27,6 +27,12 @@
 			} //determines that the transaction has content, and assigns one new entry for this batch of sales.
 			$query = "insert into sales values ($tid,$quantity,$productID,'$user');";
 			mysqli_query($db, $query) or die ("error inserting 2");
+
+			$query = "select quantity from products where productId='$productID'";
+			$result = mysqli_query($db, $query) or die ("error selecting");
+			$row = mysqli_fetch_array($result);
+			$query = "update products set quantity=".($row['quantity']-$quantity)." where productId='$productID'";
+			mysqli_query($db, $query) or die ("error updating");
 		}
 		$rows++;
 	}

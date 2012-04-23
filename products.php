@@ -28,6 +28,7 @@
 		<th>Price $</th>
 		<th>Description</th>
 		<th>Type</th>
+		<th>Quantity</th>
 		<?php
 			$rowcount = 1;
 			if($query == "") { //parse data from header (source of information for temporary changes)
@@ -35,14 +36,16 @@
 				$row['price'] = $_POST["price".$rowcount];
 				$row['description'] = $_POST["desc".$rowcount];
 				$row['types'] = $_POST["type".$rowcount];
-				$row['productId'] = $_POST["id".$rowcount];			
+				$row['productId'] = $_POST["id".$rowcount];
+				$row['quantity'] = $_POST["qty".$rowcount];
 			} else { $row = mysqli_fetch_array($result); } //parse data from database (source of information for saved changes)
 			while(isset($row['name'])) {
 				echo "<tr>";
 				echo "<td><input type=text name=\"name".$rowcount."\" value=\"".$row['name']."\"></td>";
-				echo "<td><input type=text name=\"price".$rowcount."\" value=\"".$row['price']."\"></td>";
+				echo "<td><input type=text size=\"5\" name=\"price".$rowcount."\" value=\"".$row['price']."\"></td>";
 				echo "<td><input type=text name=\"desc".$rowcount."\" value=\"".$row['description']."\"></td>";
 				echo "<td><select name=\"type".$rowcount."\" value=\"".$row['types']."\"><option>Cookie</option><option>Nut</option></select></td>";
+				echo "<td><input type=text size=\"5\" name=\"qty".$rowcount."\" value=\"".$row['quantity']."\"></td>";
 				echo "<td><input type=hidden name=\"id".$rowcount."\" value=\"".$row['productId']."\"></td>";
 				echo "</tr>";
 				$rowcount++;
@@ -52,15 +55,17 @@
 					$row['description'] = $_POST["desc".$rowcount];
 					$row['types'] = $_POST["type".$rowcount];
 					$row['productId'] = $_POST["id".$rowcount];			
+					$row['quantity'] = $_POST["qty".$rowcount];
 				} else { $row = mysqli_fetch_array($result); }
 			}
 
 			if(isset($_POST['new'])) {
 				echo "<tr>";
 				echo "<td><input type=text name=\"name".$rowcount."\"></td>";
-				echo "<td><input type=text name=\"price".$rowcount."\"></td>";
+				echo "<td><input type=text size=\"5\" name=\"price".$rowcount."\"></td>";
 				echo "<td><input type=text name=\"desc".$rowcount."\"></td>";
 				echo "<td><select name=\"type".$rowcount."\"><option>Cookie</option><option>Nut</option></select></td>";
+				echo "<td><input type=text size=\"5\" name=\"qty".$rowcount."\"></td>";
 				echo "<td><input type=hidden name=\"id".$rowcount."\"></td>";
 				echo "</tr>";
 				$rowcount++;

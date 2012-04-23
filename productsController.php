@@ -19,7 +19,7 @@
 		} else { $price = "0"; }
 		$type = $_POST["type".$rows];
 		$desc = $_POST["desc".$rows];
-		$quantity = 10;
+		$quantity = $_POST["qty".$rows];
 		
 		if($id != "") {
 			if($name != "") {
