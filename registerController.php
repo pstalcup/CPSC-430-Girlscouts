@@ -94,7 +94,11 @@
 	}
 	if($_POST["daughter"] != "")
 	{
-		$daugher = $_POST["daughter"];
+		$daughter = $_POST["daughter"];
+	}
+	else
+	{
+		$error .= "daughter&";
 	}
 
 	if($p1 != $p2) {
