@@ -33,15 +33,16 @@
 	
 	$query = "select productId from products where name = '$product';";
 	$pid = mysqli_query($db,$query);
-	
 	$qty = $_POST[$qtyid];
-	/*
-	$query = "select quantity from products where name = '$product';";
+	
+	
+	$query = "select quantity from products where productId = '$pid;";
 	$currentQty = mysqli_query($db,$query);
 	//can't substract from quantity if not available in inventory
-	if($currentQty > $qty){
+	/*
+	if($currentQty >= $qty){
 		$newQty = $currentQty - $qty;
-		$query = "UPDATE products SET quantity = '$newQty';";
+		$query = "UPDATE products SET quantity = '$newQty' WHERE productId = '$pid';";
 		mysqli_query($db,$query);
 	}else {
 		echo "The quantity available isn't enough.";
