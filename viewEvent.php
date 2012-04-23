@@ -2,7 +2,13 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
-	
+?>
+<html>
+<head>
+	<title>View Attendees</title>
+</head>
+<body>
+<?php
 	echo '<div class="content">';
 	echo '<h2>View Event Attendees</h2>';
 
@@ -26,3 +32,6 @@
 	echo "</table>";
 
 ?>
+</div>
+</body>
+</html>

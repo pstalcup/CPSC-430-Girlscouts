@@ -2,7 +2,13 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
-	
+?>
+<html>
+<head>
+	<title>Delete Events</title>
+</head>
+<body>
+<?php
 	echo '<div class="content">';
 	
 	echo "<h2>Delete Events</h2>";
@@ -43,3 +49,6 @@
 	echo "</form>";
 
 ?>
+</div>
+</body>
+</html>
