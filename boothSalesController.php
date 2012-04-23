@@ -11,7 +11,7 @@
 	
 	$date = "20".$year."-".$month."-".$day;
 	//this time is just to enter a random time
-	$time = time();
+	$time = idate();
 	$name = "Booth Sale";
 	$description = "Booth Sale";
 	$location = $location;
