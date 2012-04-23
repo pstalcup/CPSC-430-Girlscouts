@@ -36,8 +36,9 @@ div.btm
 	position: absolute;
 	bottom: 0px;
 	right: 15px;
+	text-align: right;
 }
-div.btm.a:hover
+div.btm:hover a
 {
 	color: white;
 }
