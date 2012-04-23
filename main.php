@@ -47,7 +47,7 @@
 	{
 		$attending[] = $row["eventId"];
 	}
-	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
+	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE name <> LIKE 'Booth Sal%' AND DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
 	$result = mysqli_query($db,$query);
 	echo "<form action='mainController.php'>";
 	echo "<table>";
