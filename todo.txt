@@ -1,5 +1,4 @@
 modify register sale to attribute a girl to each sale -shane
-approve accounts needs to display girl name -shane
 add quantity fields to manage inventory -shane
 
 generate sales report needs to display booth sales as well -ivania

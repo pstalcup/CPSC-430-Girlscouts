@@ -33,8 +33,14 @@
 		}
 	?>
 	</table>
-	<input type="hidden" name="girl" value="<?php echo "0"; ?>"/>
 	<?php
+		$user = $_SESSION['email'];
+		$query = "select girlId from users where email='$user'";
+		$result = mysqli_query($db,$query);
+		$row = mysqli_fetch_array($result);
+		$girlID = $row['girlId'];
+		echo "<input type=\"hidden\" name=\"girl\" value=\"$girlID\"/>";
+
 		if($numproducts == 0) {
 			echo "There are no products in inventory right now.";
 		} else {
