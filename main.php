@@ -67,7 +67,6 @@
 		{
 			$eid = $row["eventId"];
 			echo "<td>";
-			echo $eid;
 			echo "<input type='checkbox' name='$eid'";
 			if(in_array($row["eventId"],$attending))
 			{
