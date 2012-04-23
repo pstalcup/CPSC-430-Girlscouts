@@ -29,7 +29,7 @@
 				echo "<option value=\"".$id[$x]."\">".$name[$x]."</option>";
 			}
 			echo "</select></td>";
-			echo "<td><input type=\"text\" name=\"qty".$i."\"/></td></tr>";
+			echo "<td><input type=\"text\" size =\"2\"name=\"qty".$i."\"/></td></tr>";
 		}
 	?>
 	</table>
