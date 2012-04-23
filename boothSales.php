@@ -32,6 +32,11 @@
 
 	</td>
 </tr>
+<tr><td>Location</td>
+	<td>
+		<input type = "text" name ="location" />
+	</td>
+</tr>
 
 	<th>Product</th><th>Quantity</th>
 	
@@ -41,7 +46,7 @@
 	
 	while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
-	$quantity = "<input type=text name=quantity id=qty />";
+	$quantity = "<input type=text name='$qtyid' />";
 		
 	
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
