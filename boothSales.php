@@ -7,7 +7,7 @@
 		$_POST = $_SESSION['post'];
 		unset($_SESSION['post']);
 	} else {
-		$query = "select productId, nameAS 'pname' from products order by name;";
+		$query = "select productId, name AS 'pname' from products order by name;";
 		$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
 	}
 	
