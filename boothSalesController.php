@@ -28,6 +28,7 @@
 	$attendees = 0;
 	
 	while(isset($_POST['pname'])){
+	/*
 	$product = $_POST['pname'];
 	
 	$query = "select productId from products where name = '$product';";
@@ -49,6 +50,7 @@
 	$total + = $qty;
 	$attendees += 1;
 	
+	*/
 	}
 	
 	Header("Location: main.php");
