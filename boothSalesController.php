@@ -39,7 +39,7 @@
 	$currentQty = mysqli_query($db,$query);
 	//can't substract from quantity if not available in inventory
 	echo "$currentQty";
-	
+	/*
 	if($currentQty >= $qty){
 		$newQty = $currentQty - $qty;
 		$query = "UPDATE products SET quantity = '$newQty' WHERE productId = '$pid';";
@@ -51,7 +51,7 @@
 	$total + = $qty;
 	$attendees += 1;
 	
-	
+	*/
 	}
 	
 	Header("Location: main.php");
