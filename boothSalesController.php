@@ -18,7 +18,7 @@
 	$time = date();
 	$name = "Booth Sale";
 	$description = "Booth Sale";
-	$location = $location;
+	$location = $_POST["location"];
 
 	//enter booth sale into event based on date to help admin keep track of location and date of booth sale
 	$query ="INSERT INTO events (dateOfEvent,timeOfEvent,name,description,location) VALUES ('$date','$time','$name','$description','$location');";
