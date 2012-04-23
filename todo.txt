@@ -1,11 +1,10 @@
-modify register sale to attribute a girl to each sale
+modify register sale to attribute a girl to each sale -shane
+approve accounts needs to display girl name -shane
 
-make booth sale controller
+add quantity fields to manage inventory -shane
+generate sales report needs to display booth sales as well -ivania
+set sessions to expire after 5 minutesa -ivania
 
-generate sales report needs to display booth sales as well
-
-add quantity fields to manage inventory
-
-need to make delete events page
-
-approve accounts needs to display girl name
+make booth sale controller -ivania
+need to make delete events page -patrick
+make a page to show who's attending an event -patrick
