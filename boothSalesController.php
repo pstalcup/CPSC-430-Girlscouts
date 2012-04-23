@@ -28,14 +28,14 @@
 	$attendees = 0;
 	
 	while(isset($_POST['pname'])){
-	/*
+	
 	$product = $_POST['pname'];
 	
 	$query = "select productId from products where name = '$product';";
 	$pid = mysqli_query($db,$query);
 	
 	$qty = $_POST[$qtyid];
-	
+	/*
 	$query = "select quantity from products where name = '$product';";
 	$currentQty = mysqli_query($db,$query);
 	//can't substract from quantity if not available in inventory
