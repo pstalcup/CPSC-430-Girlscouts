@@ -9,5 +9,5 @@
 		echo $query;
 		mysqli_query($db,$query);
 	}
-	header("Location: main.php");	
+	header("Location: deleteEvent.php");	
 ?>

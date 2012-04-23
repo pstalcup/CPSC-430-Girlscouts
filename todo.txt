@@ -1,4 +1,3 @@
-modify register sale to attribute a girl to each sale -shane
 add quantity fields to manage inventory -shane
 
 generate sales report needs to display booth sales as well -ivania

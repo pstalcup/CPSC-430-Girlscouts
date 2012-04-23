@@ -4,6 +4,8 @@
 	include "menu.php";
 	
 	echo '<div class="content">';
+	
+	echo "<h2>Delete Events</h2>";
 	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
 	$result = mysqli_query($db,$query);
 	echo "<form action='deleteEventController.php'>";
@@ -36,6 +38,7 @@
 	}
 	while($row = mysqli_fetch_array($result));
 	echo "</table>";
+	echo "<br/>";
 	echo "<input type=submit value='Delete'>";
 	echo "</form>";
 

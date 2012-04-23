@@ -44,7 +44,7 @@
 		if($numproducts == 0) {
 			echo "There are no products in inventory right now.";
 		} else {
-			echo "<input type=\"submit\" value=\"Register Sales\"/>";
+			echo "<br/><input type=\"submit\" value=\"Register Sales\"/>";
 		}
 	?>
 </form>
