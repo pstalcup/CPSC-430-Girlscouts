@@ -66,7 +66,7 @@
 	{
 		$attending[] = $row["eventId"];
 	}
-	$query = "SELECT name FROM girls;";
+	$query = "SELECT CONCAT(firstName,' ', lastName) AS 'name', girlId FROM girls;";
 	$result = mysqli_query($db,$query);
 	echo "<form action='boothSalesController.php'>";
 	echo "<table>";
