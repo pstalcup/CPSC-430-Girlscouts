@@ -1,6 +1,4 @@
 <?php
-	$total = 0;
-
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
@@ -25,8 +23,15 @@
 	mysqli_query($db,$query);
 	Header("Location: main.php");
 
-	
 	//Add sales
-
+	$total = 0;
+	$attendees = 0;
+	while(isset($_POST['pname'])){
+	$product = $_POST['pname'];
+	
+	$query = "select productId from products where productId = 
+	
+	}
+	
 
 ?>
