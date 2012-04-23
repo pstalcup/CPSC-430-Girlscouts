@@ -7,7 +7,7 @@
 		$_POST = $_SESSION['post'];
 		unset($_SESSION['post']);
 	} else {
-		$query = "select productId, name AS 'pname' from products order by name;";
+		$query = "select productId, name from products order by name;";
 		$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
 	}
 	
@@ -44,7 +44,7 @@
 	<?php
 	
 	while($row = mysqli_fetch_array($result)) {
-	$pname = $row['pname'];
+	$pname = $row['name'];
 	$quantity = "<input type=text name='$qtyid' />";
 	
 	echo "<tr><td>$name  </td><td>$quantity </td></tr>\n";
