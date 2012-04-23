@@ -33,7 +33,7 @@
 	
 	$query = "select productId from products where name = '$product';";
 	$pid = mysqli_query($db,$query);
-	$qty = $_POST[$qtyid];
+	$qty = $_POST[$quantity];
 
 	$query = "select quantity from products where productId = '$pid;";
 	$currentQty = mysqli_query($db,$query);
