@@ -12,8 +12,13 @@
 			$girl = $_POST['girl'.$num];
 			//echo $user;
 			//echo $girl;
-			$query = "UPDATE users SET girlId=(SELECT girlId from girls where CONCAT(firstName,' ',lastName) = '$girl') where email='$user';";
-			mysqli_query($db,$query) or die ("error updating");
+			if($_POST['girl'.$num] != "(Delete)") {
+				$query = "UPDATE users SET girlId=(SELECT girlId from girls where CONCAT(firstName,' ',lastName) = '$girl') where email='$user';";
+				mysqli_query($db,$query) or die ("error updating");
+			} else {
+				$query = "delete from users where email='$user';";
+				mysqli_query($db,$query) or die ("error deleting");
+			}
 			$query = "delete from requests where email='$user';";
 			mysqli_query($db,$query) or die ("error deleting");
 		}

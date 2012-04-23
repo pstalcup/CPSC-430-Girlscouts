@@ -41,6 +41,11 @@ span
 ?>
 
 <h2>Register</h2>
+<?php
+	//if(isset($_GET['bad'])) {
+	//	echo "Sorry, one of the fields didn't have correct input.<br/>";
+	//}
+?>
 <form method="POST" action="registerController.php">
 <table>
 	<tr>
@@ -80,7 +85,7 @@ span
 		<td><input type="text" name="zip"></td>
 	</tr>
 	<tr>
-		<td>Name of Daughter</td>
+		<td><?php if(isset($_GET["daughter"])) echo "<span>*</span>"; ?>Name of Daughter</td>
 		<td><input type="text" name="daughter"></td>
 </table>
 <input type="submit" value="Request Account">
