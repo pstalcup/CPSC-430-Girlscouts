@@ -4,10 +4,14 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
-	foreach($_GET as $key => $value)
+	foreach($_POST as $key => $value)
 	{
-		$$key = $value;
+		$key = $value;
 	}
+	
+	$year = $_POST["year"];
+	$month = $_POST["month"];
+	$day = $_POST["day"];
 	
 	$date = "20".$year."-".$month."-".$day;
 	//this time is just to enter a random time
@@ -20,6 +24,7 @@
 	$query ="INSERT INTO events (dateOfEvent,timeOfEvent,name,description,location) VALUES ('$date','$time','$name','$description','$location');";
 	mysqli_query($db,$query);
 	Header("Location: main.php");
+
 	
 	//Add sales
 
