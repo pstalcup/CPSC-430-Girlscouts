@@ -53,8 +53,8 @@
 		$links["Approve Accounts"] = "approve.php";
 		$links["Add Girls"] = "addGirls.php";
 		$links["Create Event"] = "createEvents.php";
-		$links["View Events"] = "viewEvent.php";
 		$links["Delete Event"] = "deleteEvent.php";
+		$links["View Attendees"] = "viewEvent.php";
 		$links["Manage Inventory"] = "products.php";	
 	}
 	if($permission > 0) {
