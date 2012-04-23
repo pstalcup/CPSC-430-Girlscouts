@@ -24,6 +24,7 @@
 <form name="boothSale" action="boothSalesController.php" method="POST">
 <table>
 <tr>
+
 	<td>Date </td>
 	<td>
 		<input type="text" name="day" size=1 maxlength=2>/
