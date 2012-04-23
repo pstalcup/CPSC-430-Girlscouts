@@ -2,9 +2,11 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
-	foreach($_POST as $key => $value)
+	foreach($_GET as $key => $value)
 	{
-		$key = $value;
+		$query = "INSERT INTO attending (eventId, girlId) VALUES ('$key',(SELECT girlId FROM users WHERE email='$e'));";
+		echo $query."<br>";	
+		mysqli_query($db,$query);
 	}
 	
 	$year = $_POST["year"];
@@ -60,7 +62,6 @@
 	
 	$total  = $total + $qty;
 	$attendees++;
-	
 
 	}
 	
