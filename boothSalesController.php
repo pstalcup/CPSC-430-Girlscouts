@@ -22,8 +22,15 @@
 	$query ="INSERT INTO events (dateOfEvent,timeOfEvent,name,description,location) VALUES ('$date','$time','$name','$description','$location');";
 	mysqli_query($db,$query);
 	
+	//Add a new transaction and new sales
 
-	//Add sales
+	$query = "INSERT INTO transactions (girlId) VALUES ('0');";	
+	mysqli_query($db, $query);
+	
+	//Select max 
+	$query = "SELECT MAX(TID) AS 'transId'FROM transactions;";
+	$tranId = mysqli_query($db, $query);
+
 	$total = 0;
 	$attendees = 0;
 	
@@ -34,8 +41,11 @@
 	$query = "select productId from products where name = '$product';";
 	$pid = mysqli_query($db,$query);
 	$qty = $_POST[$quantity];
+	//create new sale
+	$query = "INSERT INTO sales (transactionId, quantity, productId, customer) VALUES ('$tranId', '$qty', '$pid', 'Booth Sale');";
+	mysqli_query($db, $query);	
 
-	$query = "select quantity from products where productId = '$pid;";
+	$query = "select quantity from products where productId = '$pid';";
 	$currentQty = mysqli_query($db,$query);
 	//can't substract from quantity if not available in inventory
 	echo "$currentQty";
