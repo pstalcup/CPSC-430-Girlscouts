@@ -2,11 +2,9 @@
 	include "db_connect.php";
 	$requires = "admin";
 	include "menu.php";
-	foreach($_GET as $key => $value)
+	foreach($_POST as $key => $value)
 	{
-		$query = "INSERT INTO attending (eventId, girlId) VALUES ('$key',(SELECT girlId FROM users WHERE email='$e'));";
-		echo $query."<br>";	
-		mysqli_query($db,$query);
+		$key = $value;
 	}
 	
 	$year = $_POST["year"];
@@ -61,6 +59,48 @@
 	}
 	
 	$total  = $total + $qty;
+	
+	//Add Girls
+
+	$query = "SELECT * FROM attending WHERE girlId = (SELECT girlId FROM users WHERE email='$e');";
+	$attending = Array();
+	$result = mysqli_query($db,$query);
+	while($row = mysqli_fetch_array($result))
+	{
+		$attending[] = $row["eventId"];
+	}
+	$query = "SELECT name,description,DATE_FORMAT(dateOfEvent,'%m/%d') as dateOfEvent,TIME_FORMAT(timeOfEvent,'%l:%i') as timeOfEvent,eventId FROM events WHERE name <>'Booth Sale' AND DATEDIFF(dateOfEvent,CURRENT_DATE()) > 0;";
+	$result = mysqli_query($db,$query);
+	echo "<form action='mainController.php'>";
+	echo "<table>";
+	$row = Array("name" => "<b>Name</b>","description"=>"<b>Description</b>","attending"=>"Attend?", "dateOfEvent"=>"<b>Date</b>", "timeOfEvent"=>"<b>Time</b>");
+	do
+	{
+		echo "<tr>";
+		echo "<td>".$row["name"]."</td>";
+		echo "<td>".$row["description"]."</td>";
+		echo "<td>".$row["dateOfEvent"]."&nbsp;</td>";
+		echo "<td>".$row["timeOfEvent"]."</td>";
+		if($row["attending"] != "")
+		{
+			echo "<td>".$row["attending"]."</td>";
+		}
+		else
+		{
+			$eid = $row["eventId"];
+			echo "<td>";
+			echo "<input type='checkbox' name='$eid'";
+			if(in_array($row["eventId"],$attending))
+			{
+				echo "checked";
+			}
+			echo ">";
+			echo "</td>";
+		}
+		echo "</tr>";
+	}
+	while($row = mysqli_fetch_array($result));
+	
 	$attendees++;
 
 	}
